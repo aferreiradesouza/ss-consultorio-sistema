@@ -4,14 +4,15 @@
         "directive-selector": [
             true,
             "attribute",
-            "app",
+            "ss",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "app",
+            "ss",
             "kebab-case"
-        ]
+        ],
+        "no-inferrable-types": [true, "ignore-params", "ignore-properties"]
     }
 }
