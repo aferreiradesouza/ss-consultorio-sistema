@@ -13,6 +13,7 @@ export class ButtonComponent implements OnInit {
   @Input() fill?: boolean = true;
   @Input() label: string;
   @Input() color?: string = 'azul';
+  @Input() disabled?: boolean = false;
 
 
   constructor(public router: Router) {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -6,27 +6,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './styleguide.page.html',
   styleUrls: ['./styleguide.component.scss']
 })
-export class StyleGuideComponent implements OnInit {
+export class StyleGuideComponent {
   public buttonsComPreenchimento: any[] = [
-    {label : 'Azul', color: 'azul'},
-    {label : 'Cinza', color: 'cinza'},
-    {label : 'Verde', color: 'verde'},
-    {label : 'Vermelho', color: 'vermelho'},
-    {label : 'Amarelo', color: 'amarelo'},
-    {label : 'Cyan', color: 'cyan'},
-    {label : 'Light', color: 'light'},
-    {label : 'Preto', color: 'preto'}
+    { label: 'Azul', color: 'azul', disabled: false },
+    { label: 'Cinza', color: 'cinza', disabled: true },
+    { label: 'Verde', color: 'verde', disabled: false },
+    { label: 'Vermelho', color: 'vermelho', disabled: false },
+    { label: 'Amarelo', color: 'amarelo', disabled: true },
+    { label: 'Cyan', color: 'cyan', disabled: false },
+    { label: 'Light', color: 'light', disabled: false },
+    { label: 'Preto', color: 'preto' , disabled: true}
   ];
 
   public itens: any[] = [1, 2, 3, 4, 5];
 
   public buttonGroup: any[] = [
-    {label : 'btn 1', color: 'azul'},
-    {label : 'btn 2', color: 'azul'},
-    {label : 'btn 3', color: 'azul'},
+    { label: 'btn 1', color: 'azul' },
+    { label: 'btn 2', color: 'azul' },
+    { label: 'btn 3', color: 'azul' },
   ];
-
-  ngOnInit() {
-    console.log(this.buttonsComPreenchimento);
-  }
 }

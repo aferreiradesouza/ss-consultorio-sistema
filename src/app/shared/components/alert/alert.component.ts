@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 
 export class AlertComponent implements OnInit {
-  public readonly Types = ['sucesso', 'erro', 'info'];
+  public readonly Types = ['sucesso', 'erro', 'info', 'atencao'];
 
   @Input() type: string;
   @Input() mensagem: string;
+  @Input() title: string;
 
 
   constructor(public router: Router) { }
@@ -30,6 +31,8 @@ export class AlertComponent implements OnInit {
         return 'alert-danger';
       case 'info':
         return 'alert-info';
+      case 'atencao':
+        return 'alert-warning';
     }
   }
 }

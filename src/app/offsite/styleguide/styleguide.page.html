@@ -2,14 +2,14 @@
     <p>Button com preenchimento:</p>
     <div class="row margin-bottom">
         <div class="col" *ngFor="let item of buttonsComPreenchimento">
-            <ss-button [fill]="true" [label]="item.label" [color]="item.color"></ss-button>
+            <ss-button [fill]="true" [label]="item.label" [disabled]="item.disabled" [color]="item.color"></ss-button>
         </div>
     </div>
 
     <p>Button sem preenchimento:</p>
     <div class="row margin-bottom">
         <div class="col" *ngFor="let item of buttonsComPreenchimento">
-            <ss-button [fill]="false" [label]="item.label" [color]="item.color"></ss-button>
+            <ss-button [fill]="false" [label]="item.label" [disabled]="item.disabled" [color]="item.color"></ss-button>
         </div>
     </div>
 
@@ -20,9 +20,10 @@
     </div>
 
     <p>Alerts:</p>
-    <ss-alert mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
-    <ss-alert mensagem="Texto de Erro" type="erro"></ss-alert>
-    <ss-alert mensagem="Texto de Info" type="info"></ss-alert>
+    <ss-alert title="Parabéns" mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
+    <ss-alert title="Ops!" mensagem="Texto de Erro" type="erro"></ss-alert>
+    <ss-alert title="Info" mensagem="Texto de Info" type="info"></ss-alert>
+    <ss-alert title="Atenção" mensagem="Texto de atenção" type="atencao"></ss-alert>
 
     <p>Button group:</p>
     <div class="row margin-bottom">

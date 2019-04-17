@@ -1,4 +1,4 @@
 <div>
     <button type="button" [class]="'btn btn-primary ' + getColor()"
-    [ngClass]="{'btn-outline-primary' : !fill, 'btn-primary' : fill}">{{label}}</button>
+    [ngClass]="{'btn-outline-primary' : !fill, 'btn-primary' : fill}" [disabled]="disabled">{{label}}</button>
 </div>
