@@ -1,10 +1,54 @@
 <div class="container">
-    <div>
-        Button com preenchimento
-        <ss-button [fill]="true"></ss-button>
+    <p>Button com preenchimento:</p>
+    <div class="row margin-bottom">
+        <div class="col" *ngFor="let item of buttonsComPreenchimento">
+            <ss-button [fill]="true" [label]="item.label" [color]="item.color"></ss-button>
+        </div>
     </div>
-    <div>
-        Button sem preenchimento
-        <ss-button [fill]="false"></ss-button>
+
+    <p>Button sem preenchimento:</p>
+    <div class="row margin-bottom">
+        <div class="col" *ngFor="let item of buttonsComPreenchimento">
+            <ss-button [fill]="false" [label]="item.label" [color]="item.color"></ss-button>
+        </div>
+    </div>
+
+    <div class="row margin-bottom">
+        <div class="col" *ngFor="let item of itens">
+            <ss-item [label]="'Item '+item" [bold]="true" [value]="'Value item '+item"></ss-item>
+        </div>
+    </div>
+
+    <p>Alerts:</p>
+    <ss-alert mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
+    <ss-alert mensagem="Texto de Erro" type="erro"></ss-alert>
+    <ss-alert mensagem="Texto de Info" type="info"></ss-alert>
+
+    <p>Button group:</p>
+    <div class="row margin-bottom">
+        <div class="col">
+            <ss-button-group [group]="buttonGroup"></ss-button-group>
+        </div>
+    </div>
+
+    <p>Progress normal:</p>
+    <div class="row margin-bottom">
+        <div class="col-12">
+            <ss-progress value="62" [animated]="false" [decoracao]="false" color="azul"></ss-progress>
+        </div>
+    </div>
+
+    <p>Progress com decoracao:</p>
+    <div class="row margin-bottom">
+        <div class="col-12">
+            <ss-progress value="62" [animated]="false" [decoracao]="true" color="azul"></ss-progress>
+        </div>
+    </div>
+
+    <p>Progress com decoração e animação:</p>
+    <div class="row margin-bottom">
+        <div class="col-12">
+            <ss-progress value="62" [animated]="true" [decoracao]="true" color="azul"></ss-progress>
+        </div>
     </div>
 </div>

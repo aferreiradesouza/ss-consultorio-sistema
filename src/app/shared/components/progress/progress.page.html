@@ -1,0 +1,6 @@
+<div class="progress">
+    <div [class]="'progress-bar ' + getColor()"
+        [class.progress-bar-animated]="animated" [class.progress-bar-striped]="decoracao"
+        role="progressbar"
+        aria-valuemin="0" aria-valuemax="100" [style.width]="value+'%'"></div>
+</div>

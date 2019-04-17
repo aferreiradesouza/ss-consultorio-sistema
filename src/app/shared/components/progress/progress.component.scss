@@ -1,0 +1,13 @@
+.wrapper{
+    width: 100%;
+
+    > label {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    > .value {
+        font-size: 0.9rem;
+    }
+}
+

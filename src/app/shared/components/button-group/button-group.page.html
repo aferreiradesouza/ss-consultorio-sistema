@@ -1,0 +1,3 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button *ngFor="let item of group" type="button" [class]="'btn '+getColor(item.color)">{{item.label}}</button>
+</div>

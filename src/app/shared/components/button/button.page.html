@@ -1,3 +1,4 @@
-<button *ngIf="fill && !loading" type="button" class="btn btn-primary">Foi</button>
-
-<button *ngIf="!fill && !loading" type="button" class="btn btn-outline-primary">Primary</button>
+<div>
+    <button type="button" [class]="'btn btn-primary ' + getColor()"
+    [ngClass]="{'btn-outline-primary' : !fill, 'btn-primary' : fill}">{{label}}</button>
+</div>
