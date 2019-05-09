@@ -12,12 +12,30 @@
             <ss-button [fill]="false" [label]="item.label" [disabled]="item.disabled" [color]="item.color"></ss-button>
         </div>
     </div>
+    <pre>
+        <code>&lt;ss-button [fill]="boolean" [label]="string" [disabled]="boolean" [color]="string"&gt;&lt;/ss-button&gt;
+            color: &#123;
+                azul,
+                cinza,
+                verde,
+                vermelho,
+                amarelo,
+                cyan,
+                light,
+                preto
+            &#125;
+        </code>
+    </pre>
 
     <div class="row margin-bottom">
         <div class="col" *ngFor="let item of itens">
             <ss-item [label]="'Item '+item" [bold]="true" [value]="'Value item '+item"></ss-item>
         </div>
     </div>
+    <pre>
+        <code>&lt;ss-item [label]="string" [bold]="boolean" [value]="string | number"&gt;&lt;/ss-item&gt;
+        </code>
+    </pre>
 
     <p>Alerts:</p>
     <ss-alert title="Parabéns" mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
@@ -25,12 +43,37 @@
     <ss-alert title="Info" mensagem="Texto de Info" type="info"></ss-alert>
     <ss-alert title="Atenção" mensagem="Texto de atenção" type="atencao"></ss-alert>
 
+    <pre>
+        <code>&lt;ss-alert [title]="string" [mensagem]="string" [type]="string"&gt;&lt;/ss-alert&gt;
+            type: &#123;
+                sucesso,
+                erro,
+                info,
+                atencao
+            &#125;
+        </code>
+    </pre>
+
     <p>Button group:</p>
     <div class="row margin-bottom">
         <div class="col">
             <ss-button-group [group]="buttonGroup"></ss-button-group>
         </div>
     </div>
+    <pre>
+        <code>&lt;ss-button-group [group]="array"&gt;&lt;/ss-button-group&gt;
+            array.color: &#123;
+                azul,
+                cinza,
+                verde,
+                vermelho,
+                amarelo,
+                cyan,
+                light,
+                preto
+            &#125;
+        </code>
+    </pre>
 
     <p>Progress normal:</p>
     <div class="row margin-bottom">
@@ -52,4 +95,15 @@
             <ss-progress value="62" [animated]="true" [decoracao]="true" color="azul"></ss-progress>
         </div>
     </div>
+    <pre>
+        <code>&lt;ss-progress [value]="string" [animated]="boolean" [decoracao]="boolean" [color]="string"&gt;&lt;/ss-progress&gt;
+            color: &#123;
+                azul,
+                verde,
+                vermelho,
+                amarelo,
+                cyan,
+            &#125;
+        </code>
+    </pre>
 </div>
