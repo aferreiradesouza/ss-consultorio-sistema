@@ -14,8 +14,16 @@
             }
 
             > .card-header > .row {
-                img {
-                    height: 25px;
+                .header {
+                    display: inline-flex;
+
+                    > h4 {
+                        margin-left: 20px;
+                    }
+                    
+                    > img {
+                        height: 25px;
+                    }
                 }
             }
         }

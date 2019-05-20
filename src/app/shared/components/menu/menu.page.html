@@ -1,3 +1,21 @@
 <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+            <strong>BS</strong>
+        </div>
 
+        <div class="list-unstyled components" *ngFor="let item of menuItens">
+            <span class="">{{item.label}}</span>
+            <div *ngFor="let subMenu of item.children">
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <div>{{subMenu.label}}</div>
+                <div *ngFor="let op of subMenu.children">{{op.label}}</div>
+            </div>
+        </div>
+    </nav>
+    <div id="content">
+        <ng-content></ng-content>
+    </div>
 </div>
