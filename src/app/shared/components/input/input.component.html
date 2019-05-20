@@ -1,0 +1,13 @@
+<div class="form-group" [class.was-validated]="shouldDisplayError()">
+    <label>{{label}} <span *ngIf="required">*</span></label>
+
+    <div class="input-group">
+        <input #input class="form-control" [class.is-invalid]="getErrorMessage() !== ''"
+            (input)="onChange($event.target.value)" (blur)="onBlur($event.target.value)"
+            [type]="getType()" [placeholder]="placeholder" autocomplete="off"
+            [disabled]="disabled" [required]="required" [name]="name"
+            [maxLength]="maxLength == 0 ? 30000 : maxLength" />
+    </div>
+
+    <div class="invalid-feedback" *ngIf="shouldDisplayError()">{{ getErrorMessage() }}</div>
+</div>

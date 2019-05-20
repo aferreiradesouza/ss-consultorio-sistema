@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="../../../assets/img/ss.png">
+                    </div>
+                    <div class="col-sm-11">
+                        <h4 class="my-0 font-weight-normal">Autenticação</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="form">
+                    <div class="row">
+                        <div class="col-sm">
+                            <ss-input label="E-mail" formControlName="email" [required]="true"></ss-input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <ss-input label="Senha" type="password" formControlName="senha" [required]="true">
+                            </ss-input>
+                        </div>
+                    </div>
+                    <ss-button-action [fill]="true" label="Entrar" loadingLabel="Entrando..." [disabled]="false" color="azul" [isLoading]="isLoading" (click)="alternar()"></ss-button-action>
+                </form>
+            </div>
+        </div>
+        <span>© SS Consultório | Todos os direitos Reservados</span>
+    </div>
+</div>

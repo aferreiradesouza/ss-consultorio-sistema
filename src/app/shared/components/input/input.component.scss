@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.form-group {
+    margin-bottom: 0;
+
+    > label {
+        line-height: 1.125rem;
+    }
+}
+
+.form-control {
+    border-color: $lightgrey;
+    margin-bottom: 1rem;
+
+    &:focus {
+        box-shadow: none;
+        border-color: $darkgrey;
+    }
+
+    &.is-invalid {
+        border-color: $red;
+        margin-bottom: 0;
+    }
+}
+
+.form-text {
+    font-size: .75rem;
+    line-height: 1rem;
+    height: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.invalid-feedback {
+    display: block;
+}

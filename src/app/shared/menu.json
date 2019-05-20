@@ -1,0 +1,13 @@
+[
+    {
+        "label": "Consultas", "href": "", "selected": false, "children": [
+            { "label": "Seguros e Previdência", "type": "level1", "href": "" },
+            { "label": "Pagas", "type": "level2", "href": "#" },
+            { "label": "A Pagar", "type": "level2", "href": "#" },
+            { "label": "Pagas - Mensal", "type": "level2", "href": "#" },
+            { "label": "Sobre Ativos", "type": "level2", "href": "#" },
+            { "label": "Por Cliente", "type": "level2", "href": "#" },
+            { "label": "Por Período", "type": "level2", "href": "#" }
+        ]
+    }
+]

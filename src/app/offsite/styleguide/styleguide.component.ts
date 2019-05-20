@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import menu from '../../shared/menu.json';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./styleguide.component.scss']
 })
 export class StyleGuideComponent {
+  public form = new FormGroup({
+    name: new FormControl('')
+  });
+  public isLoading: boolean = false;
+  public menuItens = menu;
   public buttonsComPreenchimento: any[] = [
     { label: 'Azul', color: 'azul', disabled: false },
     { label: 'Cinza', color: 'cinza', disabled: true },
@@ -25,4 +32,11 @@ export class StyleGuideComponent {
     { label: 'btn 2', color: 'azul' },
     { label: 'btn 3', color: 'azul' },
   ];
+
+  alternar() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
 }

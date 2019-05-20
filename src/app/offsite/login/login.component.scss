@@ -1,0 +1,27 @@
+@import '../../shared/variables.scss';
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    > .wrapper{
+
+        > .card {
+            @include for-desktop {
+                width: 500px;
+            }
+
+            > .card-header > .row {
+                img {
+                    height: 25px;
+                }
+            }
+        }
+
+        > span {
+            font-size: 12px;
+        }
+    }
+}
