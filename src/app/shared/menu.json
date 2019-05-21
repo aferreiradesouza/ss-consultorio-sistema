@@ -1,16 +1,21 @@
 [
     {
-        "label": "Consultas", "href": "", "selected": false, "children": [
-            { "label": "Seguros e Previdência", "type": "level1", "href": "", "children": [
-                { "label": "Pagas", "type": "level2", "href": "#" }
-            ] }
+        "label": "Consultas", "href": "", "icon": "fa-home", "selected": false, "children": [
+            { "label": "Listar consultas", "type": "level1", "href": ""},
+            { "label": "Criar consulta", "type": "level1", "href": ""},
+            { "label": "Cancelar consulta", "type": "level1", "href": ""},
+            { "label": "Modificar consulta", "type": "level1", "href": ""}
         ]
     },
     {
-        "label": "Consultas", "href": "", "selected": false, "children": [
-            { "label": "Seguros e Previdência", "type": "level1", "href": "", "children": [
-                { "label": "Pagas", "type": "level2", "href": "#" }
-            ] }
+        "label": "Clientes", "href": "", "icon": "fa-user-circle", "selected": false, "children": [
+            { "label": "Listar clientes", "type": "level1", "href": ""},
+            { "label": "Criar clientes", "type": "level1", "href": ""},
+            { "label": "Cancelar clientes", "type": "level1", "href": ""},
+            { "label": "Modificar clientes", "type": "level1", "href": ""}
         ]
+    },
+    {
+        "label": "Opções", "href": "", "icon": "fa-cog", "selected": false, "children": []
     }
 ]

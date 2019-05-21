@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import menu from '../../menu.json';
 
 @Component({
   selector: 'ss-menu',
@@ -8,12 +9,22 @@ import { Router } from '@angular/router';
 })
 
 export class MenuComponent implements OnInit {
-
-  @Input() menuItens: any;
+  public menuItens = menu;
+  public isOpen: boolean = true;
+  public menuSelect: any = null;
 
   constructor(public router: Router) { }
 
   ngOnInit() {
-    console.log(this.menuItens);
   }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+  selecionarCollapsible() {
+    
+  }
+
+
 }

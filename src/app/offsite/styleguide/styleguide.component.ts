@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import menu from '../../shared/menu.json';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -13,7 +12,6 @@ export class StyleGuideComponent {
     name: new FormControl('')
   });
   public isLoading: boolean = false;
-  public menuItens = menu;
   public buttonsComPreenchimento: any[] = [
     { label: 'Azul', color: 'azul', disabled: false },
     { label: 'Cinza', color: 'cinza', disabled: true },

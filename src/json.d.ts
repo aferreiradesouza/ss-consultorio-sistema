@@ -1,4 +1,4 @@
-declare module "*shared/menu.json" {
+declare module "*../../menu.json" {
     interface MenuItem {
         label: string;
         href: string;

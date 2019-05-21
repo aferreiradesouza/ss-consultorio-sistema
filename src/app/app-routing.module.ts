@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'offsite', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'offsite', loadChildren: './offsite/offsite.module#OffSiteModule' },
+  { path: 'home', loadChildren: './home/home.module#HomeModule' },
 ];
 
 @NgModule({
