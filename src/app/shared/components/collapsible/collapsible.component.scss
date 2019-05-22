@@ -1,0 +1,38 @@
+@import "../../variables.scss";
+
+
+.collapsible {
+    overflow: hidden;
+
+    > .collapsible-header {
+        position: relative;
+
+        > i{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) !important;
+            right: 10px;
+            transition: 0.3s all;
+            cursor: pointer;
+
+            @include for-mobile {
+                display: none;
+            }
+
+            &.active {
+                transform: rotate(180deg);
+            }
+
+        }
+    }
+}
+
+.collapsible-content {
+    max-height: 0;
+    transition: max-height 0.4s;
+    overflow: hidden;
+}
+
+.collapsible-content-spacing {
+    padding-top: 1.5rem;
+}

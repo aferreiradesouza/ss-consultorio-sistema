@@ -10,3 +10,16 @@ html, body {
     padding: 0 0;
     background-color: $lightblue;
 }
+
+.d-show {
+    display: block !important;
+}
+
+.container {
+
+    @include for-mobile {
+        margin-top: 0px;
+    }
+    
+    margin-top: 72px;
+}

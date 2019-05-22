@@ -11,6 +11,8 @@ import { FormatterService } from '../formatter.service';
 import { ValidatorService } from '../validator.service';
 import { InputComponent } from './input/input.component';
 import { ButtonActionComponent } from './button-action/button-action.component';
+import { ButtonIconComponent } from './button-icon/button-icon.component';
+import { CollapsibleComponent } from './collapsible/collapsible.component';
 
 const Components = [
   MenuComponent,
@@ -20,7 +22,9 @@ const Components = [
   ButtonGroupComponent,
   ProgressComponent,
   InputComponent,
-  ButtonActionComponent
+  ButtonActionComponent,
+  ButtonIconComponent,
+  CollapsibleComponent
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 <div class="form-group" [class.was-validated]="shouldDisplayError()">
-    <label>{{label}} <span *ngIf="required">*</span></label>
+    <label *ngIf="label">{{label}} <span *ngIf="required">*</span></label>
 
     <div class="input-group">
         <input #input class="form-control" [class.is-invalid]="getErrorMessage() !== ''"

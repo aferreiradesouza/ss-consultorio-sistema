@@ -10,6 +10,8 @@ import menu from '../../menu.json';
 
 export class MenuComponent implements OnInit {
   public menuItens = menu;
+  public search: string = '';
+  public isLoading: boolean;
   public isOpen: boolean = true;
   public menuSelect: any = null;
 
@@ -23,7 +25,14 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarCollapsible() {
-    
+
+  }
+
+  alternar() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
 

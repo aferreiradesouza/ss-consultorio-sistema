@@ -39,21 +39,25 @@
      }
      
      .sidebar-header {
-       padding: 20px;
+       height: 72px;
        background-color: $blue;
+       display: flex;
+       align-items: center;
+       justify-content: center;
 
-       > h3 {
-            line-height: 0.85;
-            white-space: nowrap; overflow: hidden;
+       > span {
+            white-space: nowrap; 
+            overflow: hidden;
+            font-size: 25px;
        }
        
-       strong {
+       > strong {
          display: none;
          font-size: 1.8em;
        }
      }
 
-     > .list-unstyled > .title-list{
+    .title-list{
          white-space: nowrap;
          padding: 15px 10px;
          position: relative;
@@ -67,12 +71,12 @@
          }
      }
 
-     > .list-unstyled > .title-list:hover {
+    .title-list:hover {
          background-color: $blue-hover;
          cursor: pointer;
      }
 
-     > .list-unstyled > .item-list {
+    .item-list {
          padding: 7px 5px 7px 40px;
          background-color: #3485b1;
          cursor: pointer;
@@ -97,31 +101,67 @@
     margin-left: 250px;
     transition: .3s all;
 
+    > .fix-header {
+        width: calc(100% - 80px) !important;
+    }
+
     > .header {
-        width: 100%;
+        display: inline-flex;
+        width: calc(100% - 250px);
         background-color: #c3ddeb;
         position: fixed;
         padding: 10px;
         height: 72px;
+        transition: .3s all;
+        z-index: 1500;
+
 
         > .button-wrapper {
-            color: black;
+            color: $blue;
+            display: table;
+            float: left;
    
             > .button {
                 padding: 10px;
-                border: 1px solid black;
                 font-size: 30px;
                 display: table;
                 border-radius: $border-radius;
                 cursor: pointer;
-                transition: 0.3s all;
+                transition: 0.2s all;
     
                 &:hover {
                     background-color: $blue;
                     color: white;
-                    border: 1px solid transparent;
                 }
             }
+        }
+
+        > .busca {
+            width: calc(100% - 220px);
+            padding: 7px 20px 0px 20px;
+        }
+
+        > .msgBemVindo {
+            padding: 8px 10px 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 0; 
+            top: 10px;
+            z-index: 999
+        } 
+    }
+
+    > .busca-responsiva {
+        margin-top: 72px;
+        padding: 10px;
+        background-color: $lightgrey;
+        display: none;
+        height: 58px;
+
+        ss-input {
+            z-index: -1;
         }
     }
 }
@@ -135,6 +175,16 @@
     MEDIAQUERIES
 ----------------------------------------------------- */
 
+@media (max-width: 488px) {
+
+    .busca {
+        display: none;
+    }
+
+    .busca-responsiva {
+        display: block !important;
+    }
+}
 
 @include for-mobile {
     .labelMenu {
@@ -148,22 +198,32 @@
     .sidebar {
         min-width: 80px;
         max-width: 80px;
-    }
 
-    .list-unstyled {
-        
-        > .title-list {
-            text-align: center;
-            font-size: 25px;
-
-            > .iconCollapsible {
-                display: none;
+        > .sidebar-header {
+            
+     
+            > span {
+                 display: none;
+            }
+            
+            > strong {
+              display: block !important;
+              font-size: 1.8em;
             }
         }
+    }
 
-        > .item-list {
+    .title-list {
+        text-align: center;
+        font-size: 25px;
+
+        > .iconCollapsible {
             display: none;
         }
+    }
+
+    .item-list {
+        display: none;
     }
     
     .content {
@@ -171,46 +231,44 @@
         max-width: calc(100% - 80px);
         margin-left: 80px;
         transition: .3s all;
+
+        > .fix-header {
+            width: calc(100% - 80px) !important;
+        }
+    
+        > .header {
+            display: inline-flex;
+            width: calc(100% - 80px);
+            background-color: #c3ddeb;
+            position: fixed;
+            padding: 10px;
+            height: 72px;
+            transition: .3s all;
+        }
     }
 }
 
 @include for-tablet {
     .labelMenu {
-        display: none;
-    }
-
-    .button-wrapper {
-        display: none !important;
-    }
-
-    .list-unstyled {
-
-        > .item-list {
-            display: none;
-        }
-            
-        > .title-list {
-            text-align: center;
-            font-size: 25px;
-
-            > .iconCollapsible {
-                display: none;
-            }
-        }
+        display: initial;
     }
 
     .sidebar {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 250px;
+        max-width: 250px;
     }
-    
-    .content {
-        overflow-y: auto;
-        max-width: calc(100% - 80px);
-        margin-left: 80px;
-        transition: .3s all;
+
+    .title-list {
+        align-items: initial;
+        justify-content: left;
+        font-size: 20px;
+
+        span {
+            margin-left: 10px;
+        }
     }
 }
+
 @include for-desktop {
     .labelMenu {
         display: initial;
@@ -221,7 +279,7 @@
         max-width: 250px;
     }
 
-    .list-unstyled > .title-list {
+    .title-list {
         align-items: initial;
         justify-content: left;
         font-size: 20px;
@@ -242,7 +300,7 @@
         max-width: 250px;
     }
     
-    .list-unstyled > .title-list {
+    .title-list {
         align-items: initial;
         justify-content: left;
         font-size: 20px;

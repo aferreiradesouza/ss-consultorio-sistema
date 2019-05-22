@@ -32,7 +32,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
 
 
-    @Input() label: string;
+    @Input() label?: string;
     @Input() disabled: boolean = false;
     @Input() type = 'text';
     @Input() name: string;

@@ -2,29 +2,37 @@
     <!-- Sidebar  -->
     <nav class="sidebar" [ngClass]="{'active' : !isOpen}">
         <div class="sidebar-header">
-            <h3 style="white-space: nowrap; overflow: hidden;">SS Consultório</h3>
-            <strong>SS</strong>
+            <span [ngClass]="{'d-none' : !isOpen}">SS Consultório</span>
+            <strong [ngClass]="{'d-show' : !isOpen}">SS</strong>
         </div>
-        <div class="list-unstyled" *ngFor="let item of menuItens; let i = index">
-            <div class="title-list">
+        <ss-collapsible *ngFor="let item of menuItens; let i = index" [displayLabel]="false" [showIcon]="item.children.length > 0 && isOpen" [disableIcon]="item.children.length > 0 && isOpen">
+            <div header class="title-list">
                 <i [class]="'fa ' + item.icon" [ngClass]="{'font-size-25' : !isOpen}"></i>
                 <span class="labelMenu" [ngClass]="{'d-none' : !isOpen}">{{item.label}}</span>
-                <div class="iconCollapsible" *ngIf="item.children.length > 0" [ngClass]="{'d-none' : !isOpen}">
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </div>
             </div>
-            <div class="item-list" *ngFor="let op of item.children" [ngClass]="{'d-none' : !isOpen}">
+            <div body class="item-list" *ngFor="let op of item.children" [ngClass]="{'d-none' : !isOpen}">
                 {{op.label}}
             </div>
-        </div>
+        </ss-collapsible>
     </nav>
     <div class="content" [ngClass]="{'fix-content' : !isOpen}">
-        <div class="header">
+        <div class="header" [ngClass]="{'fix-header' : !isOpen}">
             <div class="button-wrapper">
                 <div class="button" (click)="toggle()">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>
             </div>
+            <div class="busca">
+                <ss-input placeholder="Busque alguma coisa.." [(ngModel)]="search"></ss-input>
+            </div>
+            <div class="msgBemVindo">
+                Olá, <strong> Arthur</strong>
+                <ss-button-icon class="ml-4" icon="sign-out" color="vermelho"></ss-button-icon>
+                <!-- <ss-button-action class="ml-4" label="Sair" loadingLabel="Saindo..." [isLoading]="isLoading" (click)="alternar()" color="vermelho"></ss-button-action> -->
+            </div>
+        </div>
+        <div class="busca-responsiva">
+            <ss-input placeholder="Busque alguma coisa.." [(ngModel)]="search"></ss-input>
         </div>
         <ng-content></ng-content>
     </div>

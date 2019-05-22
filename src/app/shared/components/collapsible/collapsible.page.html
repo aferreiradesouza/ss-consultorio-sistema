@@ -1,0 +1,10 @@
+<div class="collapsible" [ngClass]="{'fixCollapsible' : defaultStyle}" [class.is-open]="isOpen">
+        <div class="collapsible-header" (click)="toggle()">
+            <ng-content select="[header]"></ng-content>
+            <i *ngIf="showIcon" class="fa" [ngClass]="{'active' : isOpen, 'fa-chevron-down' : !isOpen, 'fa-chevron-up' : isOpen}"></i>
+        </div>
+        <div class="label" *ngIf="displayLabel" (click)="toggle()">{{isOpen ? labelClose : labelOpen}}</div>
+        <div #content class="collapsible-content" (click)="clickOnBody()">
+            <ng-content #conteudo select="[body]"></ng-content>
+        </div>
+    </div>
