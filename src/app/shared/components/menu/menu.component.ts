@@ -9,6 +9,7 @@ import menu from '../../menu.json';
 })
 
 export class MenuComponent implements OnInit {
+  public mockRouting: string = 'home/consultas/editar-consultas';
   public menuItens = menu;
   public search: string = '';
   public isLoading: boolean;
@@ -18,14 +19,34 @@ export class MenuComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit() {
+    const a = this.routes;
   }
 
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
-  selecionarCollapsible() {
+  get routes(): string[] {
+    let route = this.mockRouting.split('/');
+    route = route.map(e => { 
+              e = this.removerEspacos(e);
+              return e.charAt(0).toUpperCase() + e.slice(1);
+            })
+    return route;
+  }
 
+  removerEspacos(str) {
+    const accents    = '-';
+    const accentsOut = " ";
+    str = str.split('');
+    const strLen = str.length;
+    let i, x;
+    for (i = 0; i < strLen; i++) {
+      if ((x = accents.indexOf(str[i])) != -1) {
+        str[i] = accentsOut[x];
+      }
+    }
+    return str.join('');
   }
 
   alternar() {

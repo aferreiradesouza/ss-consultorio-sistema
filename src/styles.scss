@@ -15,11 +15,6 @@ html, body {
     display: block !important;
 }
 
-.container {
-
-    @include for-mobile {
-        margin-top: 0px;
-    }
-    
-    margin-top: 72px;
+.border-bottom-default {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.08);
 }
