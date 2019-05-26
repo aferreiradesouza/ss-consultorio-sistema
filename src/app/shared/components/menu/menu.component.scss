@@ -45,17 +45,31 @@
        align-items: center;
        justify-content: center;
 
-       > span {
+       > div {
             white-space: nowrap; 
             overflow: hidden;
             font-size: 25px;
+
+            span {
+                opacity: 1;
+                transition: .3s opacity;
+            }
+
+            img {
+                height: 55px;
+                transition: .3s all;
+                margin-right: 10px;
+            }
+
+            .small-img {
+                height: 35px;
+            }
+
+            .margin-right {
+                margin-right: 0px !important;
+            }
        }
-       
-       > strong {
-         display: none;
-         font-size: 1.8em;
-       }
-     }
+    }
 
     .title-list{
          white-space: nowrap;
@@ -73,7 +87,6 @@
      }
 
     .title-list:hover {
-         background-color: $blue-hover;
          cursor: pointer;
      }
 
@@ -129,11 +142,6 @@
                 border-radius: $border-radius;
                 cursor: pointer;
                 transition: 0.2s all;
-    
-                &:hover {
-                    background-color: $blue;
-                    color: white;
-                }
             }
         }
 
@@ -168,11 +176,22 @@
 
     > .sub-header {
         margin-top: 72px;
-        padding: 18px;
+        padding: 10px 18px;
         background-color: $lightgrey;
-        height: 58px;
         display: inline-flex;
         width: 100%;
+        font-size: 14px;
+
+        span {
+            color: black;
+            transition: .3s all;
+            cursor: pointer; 
+
+            i {
+                color: black;
+                margin: 0 15px;
+            }
+        }
 
         @media (max-width: 488px) {
             margin-top: 0px;
@@ -207,6 +226,11 @@
 
     .button-wrapper {
         display: none !important;
+
+        .button:active {
+            background-color: $blue;
+            color: white;
+        }
     }
 
     .sidebar {
@@ -214,15 +238,15 @@
         max-width: 80px;
 
         > .sidebar-header {
-            
-     
-            > span {
-                 display: none;
-            }
-            
-            > strong {
-              display: block !important;
-              font-size: 1.8em;
+            > div {
+                span {
+                    display: none;
+                }
+
+                img {
+                    height: 35px !important;
+                    margin-right: 0 !important;
+                }
             }
         }
     }
@@ -230,6 +254,10 @@
     .title-list {
         text-align: center;
         font-size: 25px !important;
+
+        &:active {
+            background-color: $blue-hover !important;
+        }
 
         > .iconCollapsible {
             display: none;
@@ -259,12 +287,27 @@
             height: 72px;
             transition: .3s all;
         }
+        
+        > .sub-header {
+    
+            span:active{
+                color: $blue;
+            }
+        }
     }
 }
 
 @include for-tablet {
     .labelMenu {
         display: initial;
+    }
+
+    .button-wrapper {
+        
+        .button:active {
+            background-color: $blue;
+            color: white;
+        }
     }
 
     .sidebar {
@@ -277,8 +320,19 @@
         justify-content: left;
         font-size: 20px;
 
+        &:active {
+            background-color: $blue-hover !important;
+        }
+
         span {
             margin-left: 10px;
+        }
+    }
+
+    .content > .sub-header {
+        
+        span:active{
+            color: $blue;
         }
     }
 }
@@ -288,6 +342,14 @@
         display: initial;
     }
 
+    .button-wrapper {
+        
+        .button:hover {
+            background-color: $blue;
+            color: white;
+        }
+    }
+
     .sidebar {
         min-width: 250px;
         max-width: 250px;
@@ -298,8 +360,18 @@
         justify-content: left;
         font-size: 20px;
 
+        &:hover {
+            background-color: $blue-hover !important;
+        }
         span {
             margin-left: 10px;
+        }
+    }
+
+    .content > .sub-header {
+        
+        span:hover{
+            color: $blue;
         }
     }
 }
@@ -307,6 +379,14 @@
 @include for-big-desktop {
     .labelMenu {
         display: initial;
+    }
+    
+    .button-wrapper {
+        
+        .button:hover {
+            background-color: $blue;
+            color: white;
+        }
     }
 
     .sidebar {
@@ -319,8 +399,19 @@
         justify-content: left;
         font-size: 20px;
 
+        &:hover {
+            background-color: $blue-hover !important;
+        }
+
         span {
             margin-left: 10px;
+        }
+    }
+
+    .content > .sub-header {
+        
+        span:hover{
+            color: $blue;
         }
     }
 }

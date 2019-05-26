@@ -17,10 +17,14 @@ $blue-hover: #386780;
 $lightblue: #EBF0F8;
 $darkgrey: #99A2A9;
 $lightgrey: #D9DCDF;
+$black: black;
 $white: white;
 $red: #dc3545;
+$warning: #ffc107;
+$success: #28a745;
 
 $background-color: $lightgrey;
+$border-grey: #ccc;
 
 @mixin for-mobile {
     @media (max-width: 767px) { @content; }

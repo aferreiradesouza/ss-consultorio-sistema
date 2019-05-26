@@ -6,6 +6,10 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'consultas', component: HomeComponent },
+    { path: 'consultas/clientes', component: HomeComponent },
+    { path: 'consultas/clientes/editar-item', component: HomeComponent },
+    { path: 'consultas/clientes/editar-item/excluir-adesao', component: HomeComponent },
 ];
 
 @NgModule({

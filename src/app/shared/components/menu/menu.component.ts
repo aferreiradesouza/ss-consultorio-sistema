@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import menu from '../../menu.json';
+import { e } from '@angular/core/src/render3';
 
 @Component({
   selector: 'ss-menu',
@@ -9,7 +10,6 @@ import menu from '../../menu.json';
 })
 
 export class MenuComponent implements OnInit {
-  public mockRouting: string = 'home/consultas/editar-consultas';
   public menuItens = menu;
   public search: string = '';
   public isLoading: boolean;
@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit() {
-    const a = this.routes;
+    console.log(this.router);
   }
 
   toggle() {
@@ -27,22 +27,51 @@ export class MenuComponent implements OnInit {
   }
 
   get routes(): string[] {
-    let route = this.mockRouting.split('/');
-    route = route.map(e => { 
-              e = this.removerEspacos(e);
-              return e.charAt(0).toUpperCase() + e.slice(1);
-            })
+    const breadscrumb: string = this.router.url.replace('/', '');
+    let route = breadscrumb.split('/');
+    route = route.map(element => {
+              element = this.transformString(element, true);
+              return element.charAt(0).toUpperCase() + element.slice(1);
+            });
     return route;
   }
 
-  removerEspacos(str) {
-    const accents    = '-';
-    const accentsOut = " ";
+  showIcon(index: number): boolean {
+    return index + 1 !== this.routes.length;
+  }
+
+  public selectBreadcrumb(route: string): void {
+    const destino = [];
+    for (const item of this.routes) {
+      destino.push(this.transformRoute(item));
+      if (item === route) {
+        break;
+      }
+    }
+    this.router.navigate(destino);
+  }
+
+  transformRoute(route): string {
+    let _route = route.charAt(0).toLowerCase() + route.slice(1);
+    _route = this.transformString(_route, false);
+    return _route;
+  }
+
+  transformString(str, space?: boolean) {
+    let accents;
+    let accentsOut;
+    if (space) {
+      accents    += '-';
+      accentsOut += ' ';
+    } else {
+      accents    += ' ';
+      accentsOut += '-';
+    }
     str = str.split('');
     const strLen = str.length;
     let i, x;
     for (i = 0; i < strLen; i++) {
-      if ((x = accents.indexOf(str[i])) != -1) {
+      if ((x = accents.indexOf(str[i])) !== -1) {
         str[i] = accentsOut[x];
       }
     }

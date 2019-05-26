@@ -13,6 +13,7 @@ import { InputComponent } from './input/input.component';
 import { ButtonActionComponent } from './button-action/button-action.component';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
+import { CardsComponent } from './cards/cards.component';
 
 const Components = [
   MenuComponent,
@@ -24,7 +25,8 @@ const Components = [
   InputComponent,
   ButtonActionComponent,
   ButtonIconComponent,
-  CollapsibleComponent
+  CollapsibleComponent,
+  CardsComponent
 ];
 
 @NgModule({

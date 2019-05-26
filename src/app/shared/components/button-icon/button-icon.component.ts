@@ -22,7 +22,7 @@ export class ButtonIconComponent implements OnInit {
     if (this.colors.indexOf(this.color) === -1) {
       throw new Error('[ss-button] Cor invalida ' + this.color);
     }
-    
+
     if (!this.icon) {
       throw new Error('[ss-button] Icon is mandatory');
     }
