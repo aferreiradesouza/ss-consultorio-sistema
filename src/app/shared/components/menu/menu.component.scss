@@ -9,7 +9,7 @@
     align-items: stretch;
 
     .sidebar {
-        background-color: $blue;
+        background-color: $primary-light-10;
         color: $white;
         transition: all 0.3s;
         position: fixed;
@@ -40,7 +40,7 @@
      
      .sidebar-header {
        height: 72px;
-       background-color: $blue;
+       background-color: $primary-dark-5;
        display: flex;
        align-items: center;
        justify-content: center;
@@ -75,7 +75,7 @@
          white-space: nowrap;
          padding: 15px 10px;
          position: relative;
-         background-color: #4389af;
+         background-color: $primary-light-5;
          font-size: 16px;
 
          > .iconCollapsible {
@@ -92,7 +92,7 @@
 
     .item-list {
          padding: 7px 5px 7px 40px;
-         background-color: #3485b1;
+         background-color: $primary-light-10;
          cursor: pointer;
          white-space: nowrap;
          overflow: hidden;
@@ -122,7 +122,7 @@
     > .header {
         display: inline-flex;
         width: calc(100% - 250px);
-        background-color: #c3ddeb;
+        background-color: $primary-dark-5;
         position: fixed;
         padding: 10px;
         height: 72px;
@@ -256,7 +256,7 @@
         font-size: 25px !important;
 
         &:active {
-            background-color: $blue-hover !important;
+            background-color: $primary-dark-5 !important;
         }
 
         > .iconCollapsible {
@@ -321,7 +321,7 @@
         font-size: 20px;
 
         &:active {
-            background-color: $blue-hover !important;
+            background-color: $primary-dark-5 !important;
         }
 
         span {
@@ -345,7 +345,7 @@
     .button-wrapper {
         
         .button:hover {
-            background-color: $blue;
+            background-color: $primary-dark-5;
             color: white;
         }
     }
@@ -361,7 +361,7 @@
         font-size: 20px;
 
         &:hover {
-            background-color: $blue-hover !important;
+            background-color: $primary-dark-5 !important;
         }
         span {
             margin-left: 10px;
@@ -384,7 +384,7 @@
     .button-wrapper {
         
         .button:hover {
-            background-color: $blue;
+            background-color: $primary-dark-5;
             color: white;
         }
     }
@@ -400,7 +400,7 @@
         font-size: 20px;
 
         &:hover {
-            background-color: $blue-hover !important;
+            background-color: $primary-dark-5 !important;
         }
 
         span {

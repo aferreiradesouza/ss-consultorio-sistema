@@ -1,5 +1,5 @@
 @import '../app/shared/variables.scss';
 
 main {
-    background-color: $lightblue;
+    background-color: var(--ion-color-light);
 }
