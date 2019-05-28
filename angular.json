@@ -42,6 +42,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "https://aferreiradesouza.github.io/ss-consultorio-sistema/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
