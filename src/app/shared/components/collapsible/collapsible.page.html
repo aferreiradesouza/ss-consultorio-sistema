@@ -4,7 +4,7 @@
             <i *ngIf="showIcon" class="fa" [ngClass]="{'active' : isOpen, 'fa-chevron-down' : !isOpen, 'fa-chevron-up' : isOpen}"></i>
         </div>
         <div class="label" *ngIf="displayLabel" (click)="toggle()">{{isOpen ? labelClose : labelOpen}}</div>
-        <div #content class="collapsible-content" (click)="clickOnBody()">
+        <div #content class="collapsible-content">
             <ng-content #conteudo select="[body]"></ng-content>
         </div>
     </div>
