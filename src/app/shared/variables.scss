@@ -43,7 +43,7 @@ $border-grey: #ccc;
 }
 
 // primary
-$primary: #4b6090;
+$primary: #34495e;
 
 $primary-light-5: lighten($primary, 5%);
 $primary-light-10: lighten($primary, 10%);
@@ -55,6 +55,10 @@ $primary-dark-10: darken( $primary, 10% );
 $primary-dark-15: darken( $primary, 15% );
 $primary-dark-20: darken( $primary, 20% );
 
+$primary-contrast-dark: #fff;
+$primary-contrast-light: #000;
+
+// medium
 $medium: #d6d6d6;
 
 $medium-light-5: lighten($medium, 5%);
@@ -66,3 +70,22 @@ $medium-dark-5: darken( $medium, 5% );
 $medium-dark-10: darken( $medium, 10% );
 $medium-dark-15: darken( $medium, 15% );
 $medium-dark-20: darken( $medium, 20% );
+
+$medium-contrast-dark: #fff;
+$medium-contrast-light: #000;
+
+// medium
+$danger: #e74c3c;
+
+$danger-light-5: lighten($danger, 5%);
+$danger-light-10: lighten($danger, 10%);
+$danger-light-15: lighten($danger, 15%);
+$danger-light-20: lighten($danger, 20%);
+
+$danger-dark-5: darken( $danger, 5% );
+$danger-dark-10: darken( $danger, 10% );
+$danger-dark-15: darken( $danger, 15% );
+$danger-dark-20: darken( $danger, 20% );
+
+$danger-contrast-dark: #fff;
+$danger-contrast-light: #000;

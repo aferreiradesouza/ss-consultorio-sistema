@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.btn-danger {
+    color: $danger-contrast-dark !important;
+    background-color: $danger !important;
+    border-color: $danger-dark-5 !important;
+}
