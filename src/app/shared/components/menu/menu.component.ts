@@ -17,67 +17,35 @@ export class MenuComponent implements OnInit {
   public menuSelect: any = null;
 
   @Input() active: string;
+  @Input() breadcrumb: Array<{route: string, label: string}>;
+
 
   constructor(public router: Router) { }
 
   ngOnInit() {
-    console.log(this.router);
   }
 
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
-  get routes(): string[] {
-    const breadscrumb: string = this.router.url.replace('/', '');
-    let route = breadscrumb.split('/');
-    route = route.map(element => {
-              element = this.transformString(element, true);
-              return element.charAt(0).toUpperCase() + element.slice(1);
-            });
-    return route;
+  get routes(): {route: string, label: string}[] {
+    return this.breadcrumb;
   }
 
   showIcon(index: number): boolean {
     return index + 1 !== this.routes.length;
   }
 
-  public selectBreadcrumb(route: string): void {
+  public selectBreadcrumb(route: {route: string, label: string}): void {
     const destino = [];
     for (const item of this.routes) {
-      destino.push(this.transformRoute(item));
-      if (item === route) {
+      destino.push(item.route);
+      if (item.label === route.label) {
         break;
       }
     }
     this.router.navigate(destino);
-  }
-
-  transformRoute(route): string {
-    let _route = route.charAt(0).toLowerCase() + route.slice(1);
-    _route = this.transformString(_route, false);
-    return _route;
-  }
-
-  transformString(str, space?: boolean) {
-    let accents;
-    let accentsOut;
-    if (space) {
-      accents    += '-';
-      accentsOut += ' ';
-    } else {
-      accents    += ' ';
-      accentsOut += '-';
-    }
-    str = str.split('');
-    const strLen = str.length;
-    let i, x;
-    for (i = 0; i < strLen; i++) {
-      if ((x = accents.indexOf(str[i])) !== -1) {
-        str[i] = accentsOut[x];
-      }
-    }
-    return str.join('');
   }
 
   alternar() {
@@ -85,6 +53,10 @@ export class MenuComponent implements OnInit {
     setTimeout(() => {
       this.isLoading = false;
     }, 2000);
+  }
+
+  selectTab(event, item) {
+    console.log(event, item);
   }
 
   setActiveMenu(label) {

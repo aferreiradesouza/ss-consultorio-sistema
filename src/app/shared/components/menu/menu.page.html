@@ -7,7 +7,7 @@
                 <span [ngClass]="{'d-none' : !isOpen}">Consultório</span>
             </div>
         </div>
-        <ss-collapsible *ngFor="let item of menuItens; let i = index" [displayLabel]="false"
+        <ss-collapsible *ngFor="let item of menuItens; let i = index" [displayLabel]="false" (openPage)="selectTab($event, item)"
             [showIcon]="item.children.length > 0 && isOpen" [disableIcon]="item.children.length > 0 && isOpen">
             <div header [ngClass]="setActiveMenu(item.label)">
                 <div class="title-list">
@@ -31,9 +31,8 @@
                 <ss-input placeholder="Busque alguma coisa.." [(ngModel)]="search"></ss-input>
             </div>
             <div class="msgBemVindo">
-                Olá, <strong> Arthur F.</strong>
+                Olá, <strong> Arthur</strong>
                 <ss-button-icon class="ml-4" icon="sign-out" color="vermelho"></ss-button-icon>
-                <!-- <ss-button-action class="ml-4" label="Sair" loadingLabel="Saindo..." [isLoading]="isLoading" (click)="alternar()" color="vermelho"></ss-button-action> -->
             </div>
         </div>
         <div class="busca-responsiva">
@@ -42,7 +41,7 @@
         <div class="sub-header border-bottom-default">
             <div class="row">
                 <div class="col-sm">
-                    <span *ngFor="let item of routes; let i = index" (click)="selectBreadcrumb(item)"> {{item}} <i
+                    <span *ngFor="let item of routes; let i = index" (click)="selectBreadcrumb(item)"> {{item.label}} <i
                             class="fa fa-chevron-right" *ngIf="i + 1 !== routes.length"></i></span>
                 </div>
             </div>

@@ -1,14 +1,14 @@
 [
     {
-        "label": "Consultas", "href": "", "icon": "fa-home", "selected": false, "children": [
-            { "label": "Listar consultas", "type": "level1", "href": ""},
+        "label": "Início", "href": "home", "icon": "fa-home", "selected": false, "children": [
+            { "label": "Agenda", "type": "level1", "href": ""},
             { "label": "Criar consulta", "type": "level1", "href": ""},
             { "label": "Cancelar consulta", "type": "level1", "href": ""},
             { "label": "Modificar consulta", "type": "level1", "href": ""}
         ]
     },
     {
-        "label": "Clientes", "href": "", "icon": "fa-user-circle", "selected": false, "children": [
+        "label": "Clientes", "href": "clientes", "icon": "fa-user-circle", "selected": false, "children": [
             { "label": "Listar clientes", "type": "level1", "href": ""},
             { "label": "Criar clientes", "type": "level1", "href": ""},
             { "label": "Cancelar clientes", "type": "level1", "href": ""},
