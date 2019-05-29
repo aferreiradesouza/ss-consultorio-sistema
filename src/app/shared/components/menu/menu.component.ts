@@ -16,6 +16,8 @@ export class MenuComponent implements OnInit {
   public isOpen: boolean = true;
   public menuSelect: any = null;
 
+  @Input() active: string;
+
   constructor(public router: Router) { }
 
   ngOnInit() {
@@ -83,6 +85,13 @@ export class MenuComponent implements OnInit {
     setTimeout(() => {
       this.isLoading = false;
     }, 2000);
+  }
+
+  setActiveMenu(label) {
+    if (this.active === label) {
+      return ['activeMenu', 'background-menu'];
+    }
+    return '';
   }
 
 

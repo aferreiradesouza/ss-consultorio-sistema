@@ -49,11 +49,15 @@ $primary-light-5: lighten($primary, 5%);
 $primary-light-10: lighten($primary, 10%);
 $primary-light-15: lighten($primary, 15%);
 $primary-light-20: lighten($primary, 20%);
+$primary-light-25: lighten($primary, 25%);
+$primary-light-30: lighten($primary, 30%);
 
 $primary-dark-5: darken( $primary, 5% );
 $primary-dark-10: darken( $primary, 10% );
 $primary-dark-15: darken( $primary, 15% );
 $primary-dark-20: darken( $primary, 20% );
+$primary-dark-25: darken( $primary, 25% );
+$primary-dark-30: darken( $primary, 30% );
 
 $primary-contrast-dark: #fff;
 $primary-contrast-light: #000;
@@ -74,7 +78,7 @@ $medium-dark-20: darken( $medium, 20% );
 $medium-contrast-dark: #fff;
 $medium-contrast-light: #000;
 
-// medium
+// danger
 $danger: #e74c3c;
 
 $danger-light-5: lighten($danger, 5%);

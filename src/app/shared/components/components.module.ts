@@ -14,6 +14,8 @@ import { ButtonActionComponent } from './button-action/button-action.component';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CardsComponent } from './cards/cards.component';
+import { TitleComponent } from './title/title.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 const Components = [
   MenuComponent,
@@ -26,7 +28,9 @@ const Components = [
   ButtonActionComponent,
   ButtonIconComponent,
   CollapsibleComponent,
-  CardsComponent
+  CardsComponent,
+  TitleComponent,
+  CalendarioComponent
 ];
 
 @NgModule({
