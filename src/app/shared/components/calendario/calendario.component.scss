@@ -1,1 +1,51 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+
+  > .dias {
+    display: inline-flex;
+    margin-left: 40px;
+    width: calc(100% - 40px);
+    border-bottom: 1px solid black;
+
+    > .dia {
+      width: 14.28%;
+      padding: 5px 0px;
+      text-align: center;
+      background-color: $medium-light-10;
+    }
+  }
+
+  > .hours {
+    display: inline-flex;
+    width: 100%;
+
+    &:first-child {
+      border-top: 1px solid black;
+    }
+
+    > .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 41px;
+      font-size: 12px;
+      background-color: $medium;
+      color: $medium-contrast-light;
+      border: none;
+    }
+
+    > .lista {
+      height: 40px;
+      width: 14.28%;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+
+      &:last-child {
+        border-right: 1px solid black;
+      }
+    }
+  }
+}
