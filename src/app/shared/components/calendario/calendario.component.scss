@@ -1,5 +1,12 @@
 @import "../../variables.scss";
 
+.painel {
+  width: 100%;
+  background-color: $medium-light-10;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
 .wrapper {
   width: 100%;
   overflow: hidden;
