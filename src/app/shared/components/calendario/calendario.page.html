@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="dias">
-        <div class="dia" *ngFor="let num of showDias">{{days[num].data}} {{days[num].day.curto}}</div>
+        <div class="dia" *ngFor="let num of showDias">{{days[num].data}}, {{days[num].day.curto}}</div>
     </div>
     <div class="hours" *ngFor="let hora of hours">
         <div class="label">{{hora.hour}}</div>

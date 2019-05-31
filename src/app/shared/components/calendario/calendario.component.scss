@@ -15,6 +15,7 @@
       padding: 5px 0px;
       text-align: center;
       background-color: $medium-light-10;
+      font-size: 13px;
     }
   }
 
@@ -32,13 +33,12 @@
       justify-content: center;
       width: 41px;
       font-size: 12px;
-      background-color: $medium;
-      color: $medium-contrast-light;
-      border: none;
+      background-color: $primary-light-50;
+      color: $primary-dark-20;
     }
 
     > .lista {
-      height: 40px;
+      height: 50px;
       width: 14.28%;
       border-left: 1px solid black;
       border-bottom: 1px solid black;
