@@ -97,3 +97,20 @@ $danger-dark-20: darken($danger, 20%);
 
 $danger-contrast-dark: #fff;
 $danger-contrast-light: #000;
+
+// darken
+$darken: #141414;
+
+$darken-light-5: lighten($darken, 5%);
+$darken-light-10: lighten($darken, 10%);
+$darken-light-15: lighten($darken, 15%);
+$darken-light-20: lighten($darken, 20%);
+$darken-light-25: lighten($darken, 25%);
+$darken-light-30: lighten($darken, 30%);
+$darken-light-35: lighten($darken, 35%);
+$darken-light-40: lighten($darken, 40%);
+$darken-light-45: lighten($darken, 45%);
+$darken-light-50: lighten($darken, 50%);
+
+$darken-contrast-dark: #fff;
+

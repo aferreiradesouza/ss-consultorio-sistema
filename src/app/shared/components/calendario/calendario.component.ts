@@ -9,8 +9,13 @@ import * as moment from 'moment';
 })
 
 export class CalendarioComponent implements OnInit {
+  public month = new Date().getMonth();
+  public year = new Date().getFullYear();
+  public index: number = 1;
 
-  public days: any[] = this.getDaysInMonth(4, 2019);
+  public conteudo = '<div>Foooi</div>';
+
+  public days: any[] = this.getDaysInMonth(this.month, this.year);
   public hours: any = [
     {hour: '07:00', horarios: this.montarHorarios()},
     {hour: '07:30', horarios: this.montarHorarios()},
@@ -30,7 +35,7 @@ export class CalendarioComponent implements OnInit {
     {hour: '14:30', horarios: this.montarHorarios()},
   ];
 
-  public showDias = this.criarDias;
+  public showDias = this.criarDias();
 
   constructor(public router: Router) {
   }
@@ -79,11 +84,65 @@ export class CalendarioComponent implements OnInit {
   }
 
   diaSelecionado(hora, dia) {
-    console.log('hora:', hora, 'dia:', dia);
+    console.log('hora:', hora, 'dia:', this.days[dia].data);
   }
 
-  get criarDias() {
-    const ret = Array(Number(7)).fill(0).map((x, i) => i++);
-    return ret;
+  criarDias(limit?: number, startNum?: number) {
+    if (limit) {
+      const ret = Array(Number(limit)).fill(0).map((x, i) => startNum ? startNum + i : 21 + i);
+      return ret;
+    } else {
+      const ret = Array(Number(7)).fill(0).map((x, i) => i++);
+      return ret;
+    }
+  }
+
+  alterarGrid(crescent: boolean) {
+    if (crescent) {
+      if (this.index + 1 <= this.showMonthsAmout) {
+        this.index = this.index + 1;
+        if (this.index === 5) {
+          this.showDias = this.criarDias(this.days.length - 28);
+        }
+        this.showDias = this.showDias.map(e => e + 7);
+      } else {
+        // change month
+        return;
+      }
+    } else {
+      if (this.index - 1 >= 1) {
+        if (this.index === 5) {
+          this.index = this.index - 1;
+          this.showDias = this.criarDias(7, 28);
+        } else {
+          this.index = this.index - 1;
+        }
+
+        this.showDias = this.showDias.map(e => e - 7);
+      } else {
+        // change month
+        return;
+      }
+    }
+  }
+
+  get showMonthsAmout(): number {
+    const count: number = this.days.length / 7;
+    return Math.ceil(count);
+  }
+
+  mouseEnter(event: MouseEvent) {
+    event.srcElement['innerHTML'] =
+    `<div style="background-color: #b2e2bc;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;">
+    <div class="btn btn-success" style="font-size: 13px; cursor: pointer">Marcar horário</div>
+    </div>`;
+  }
+
+  mouseLeave(event: MouseEvent) {
+    event.srcElement['innerHTML'] = '';
   }
 }

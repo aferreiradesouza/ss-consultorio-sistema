@@ -5,6 +5,9 @@
   background-color: $medium-light-10;
   height: 150px;
   margin-bottom: 20px;
+
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 .wrapper {
@@ -15,13 +18,13 @@
     display: inline-flex;
     margin-left: 40px;
     width: calc(100% - 40px);
-    border-bottom: 1px solid black;
 
     > .dia {
-      width: 14.28%;
+      width: 14.98%;
       padding: 5px 0px;
       text-align: center;
       background-color: $medium-light-10;
+      border-bottom: 1px solid $darken;
       font-size: 13px;
     }
   }
@@ -31,7 +34,7 @@
     width: 100%;
 
     &:first-child {
-      border-top: 1px solid black;
+      border-top: 1px solid $darken-light-30;
     }
 
     > .label {
@@ -45,13 +48,13 @@
     }
 
     > .lista {
-      height: 50px;
+      height: 100px;
       width: 14.28%;
-      border-left: 1px solid black;
-      border-bottom: 1px solid black;
+      border-left: 1px solid $darken-light-30;
+      border-bottom: 1px solid $darken;
 
       &:last-child {
-        border-right: 1px solid black;
+        border-right: 1px solid $darken-light-30;
       }
     }
   }
