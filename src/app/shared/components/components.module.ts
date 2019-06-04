@@ -16,6 +16,7 @@ import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CardsComponent } from './cards/cards.component';
 import { TitleComponent } from './title/title.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const Components = [
   MenuComponent,
@@ -30,7 +31,8 @@ const Components = [
   CollapsibleComponent,
   CardsComponent,
   TitleComponent,
-  CalendarioComponent
+  CalendarioComponent,
+  DialogComponent
 ];
 
 @NgModule({

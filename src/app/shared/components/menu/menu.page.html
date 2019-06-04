@@ -32,7 +32,7 @@
             </div>
             <div class="msgBemVindo">
                 Olá, <strong> Arthur</strong>
-                <ss-button-icon class="ml-4" icon="sign-out" color="vermelho"></ss-button-icon>
+                <ss-button-icon class="ml-4" icon="sign-out" color="vermelho" (click)="pop()"></ss-button-icon>
             </div>
         </div>
         <div class="busca-responsiva">
@@ -49,3 +49,4 @@
         <ng-content></ng-content>
     </div>
 </div>
+<ss-dialog #dialog></ss-dialog>

@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import menu from '../../menu.json';
-import { e } from '@angular/core/src/render3';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'ss-menu',
@@ -15,6 +15,8 @@ export class MenuComponent implements OnInit {
   public isLoading: boolean;
   public isOpen: boolean = true;
   public menuSelect: any = null;
+
+  @ViewChild(DialogComponent) public dialog: DialogComponent;
 
   @Input() active: string;
   @Input() breadcrumb: Array<{route: string, label: string}>;
@@ -64,6 +66,11 @@ export class MenuComponent implements OnInit {
       return ['activeMenu', 'background-menu'];
     }
     return '';
+  }
+
+  pop() {
+    console.log('pop');
+    this.dialog.toggle();
   }
 
 
