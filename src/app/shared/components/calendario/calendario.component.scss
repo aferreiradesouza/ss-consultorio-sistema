@@ -24,7 +24,6 @@
       padding: 5px 0px;
       text-align: center;
       background-color: $medium-light-10;
-      border-bottom: 1px solid $darken;
       font-size: 13px;
     }
   }
@@ -43,19 +42,49 @@
       justify-content: center;
       width: 41px;
       font-size: 12px;
-      background-color: $primary-light-50;
-      color: $primary-dark-20;
+      background-color: $white;
+      color: $white;
     }
 
     > .lista {
       height: 100px;
-      width: 14.28%;
+      width: 15.08%;
       border-left: 1px solid $darken-light-30;
-      border-bottom: 1px solid $darken;
+      border-bottom: 1px solid $darken-light-30;
 
       &:last-child {
         border-right: 1px solid $darken-light-30;
       }
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  > thead > tr > th {
+    background-color: $medium-light-10;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  > tbody > tr {
+
+    .label {
+      background-color: lighten($very-light-primary, 50%);
+      color: $black;
+      text-align: center;
+      max-width: 97px !important;
+    }
+
+    .dias {
+      // border-right: 1px solid $medium-dark-10;
+      padding: 0;
+      height: 65px;
+    }
+
+    td {
+      font-size: 12px;
     }
   }
 }

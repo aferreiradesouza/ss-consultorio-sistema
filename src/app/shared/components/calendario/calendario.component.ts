@@ -13,8 +13,6 @@ export class CalendarioComponent implements OnInit {
   public year = new Date().getFullYear();
   public index: number = 1;
 
-  public conteudo = '<div>Foooi</div>';
-
   public days: any[] = this.getDaysInMonth(this.month, this.year);
   public hours: any = [
     {hour: '07:00', horarios: this.montarHorarios()},
@@ -83,8 +81,37 @@ export class CalendarioComponent implements OnInit {
     }
   }
 
+  formatarMes(mes: number) {
+    switch (mes) {
+      case 0:
+        return {extenso: 'Janeiro', curto: 'Jan'};
+      case 1:
+        return {extenso: 'Fevereiro', curto: 'Fev'};
+      case 2:
+        return {extenso: 'Março', curto: 'Mar'};
+      case 3:
+        return {extenso: 'Abril', curto: 'Abr'};
+      case 4:
+        return {extenso: 'Maio', curto: 'Mai'};
+      case 5:
+        return {extenso: 'Junho', curto: 'Jun'};
+      case 6:
+        return {extenso: 'Julho', curto: 'Jul'};
+      case 7:
+        return {extenso: 'Agosto', curto: 'Ago'};
+      case 8:
+        return {extenso: 'Setembro', curto: 'Set'};
+      case 9:
+        return {extenso: 'Outubro', curto: 'Out'};
+      case 10:
+        return {extenso: 'Novembro', curto: 'Nov'};
+      case 11:
+        return {extenso: 'Dezembro', curto: 'Dez'};
+    }
+  }
+
   diaSelecionado(hora, dia) {
-    console.log('hora:', hora, 'dia:', this.days[dia].data);
+    console.log('hora:', hora, 'dia:', this.days[dia].data + '/' + this.month + '/' + this.year);
   }
 
   criarDias(limit?: number, startNum?: number) {
@@ -106,7 +133,12 @@ export class CalendarioComponent implements OnInit {
         }
         this.showDias = this.showDias.map(e => e + 7);
       } else {
-        // change month
+        if (this.month + 1 > 11) {
+          return;
+        }
+        this.month += 1;
+        this.reset();
+        this.days = this.getDaysInMonth(this.month, this.year);
         return;
       }
     } else {
@@ -120,10 +152,32 @@ export class CalendarioComponent implements OnInit {
 
         this.showDias = this.showDias.map(e => e - 7);
       } else {
-        // change month
+        if (this.month - 1 < 0) {
+          return;
+        }
+        this.month -= 1;
+        this.reset();
+        this.days = this.getDaysInMonth(this.month, this.year);
+
         return;
       }
     }
+  }
+
+  alterarMes(type: string) {
+    if (type === 'up' && this.month + 1 <= 11) {
+      this.month += 1;
+    } else if (type === 'down' && this.month - 1 >= 0) {
+      this.month -= 1;
+    }
+
+    this.reset();
+    this.days = this.getDaysInMonth(this.month, this.year);
+  }
+
+  reset() {
+    this.index = 1;
+    this.showDias = this.criarDias();
   }
 
   get showMonthsAmout(): number {
@@ -132,17 +186,15 @@ export class CalendarioComponent implements OnInit {
   }
 
   mouseEnter(event: MouseEvent) {
+    event.srcElement['bgColor'] = '#b2e2bc';
+    event.srcElement['width'] = `${event.srcElement['clientWidth']}px`;
     event.srcElement['innerHTML'] =
-    `<div style="background-color: #b2e2bc;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;">
-    <div class="btn btn-success" style="font-size: 13px; cursor: pointer">Marcar horário</div>
-    </div>`;
+    `<div style="font-size: 13px; cursor: pointer">Marcar horário</div>`;
   }
 
   mouseLeave(event: MouseEvent) {
+    event.srcElement['width'] = '';
+    event.srcElement['bgColor'] = '';
     event.srcElement['innerHTML'] = '';
   }
 }

@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'offsite', loadChildren: './offsite/offsite.module#OffSiteModule' },
-  { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'offsite', loadChildren: './offsite/offsite.module#OffSiteModule', data: {title: 'Offsite'} },
+  { path: 'home', loadChildren: './home/home.module#HomeModule', data: {title: 'Início'} },
 ];
 
 @NgModule({

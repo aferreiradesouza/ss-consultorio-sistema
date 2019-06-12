@@ -1,13 +1,49 @@
-<div class="painel row">
-    <div class="col-sm-1">
-        <ss-button-icon [fill]="false" icon="chevron-left" color="cinza" (click)="alterarGrid(false)"></ss-button-icon>
+<div class="painel">
+    <div class="row">
+        <div class="col-sm-1">
+            <ss-button-icon [fill]="false" icon="chevron-left" color="cinza" (click)="alterarMes('down')">
+            </ss-button-icon>
+        </div>
+        <div class="col-sm-2">
+            {{formatarMes(month).extenso}}
+        </div>
+        <div class="col-sm-1">
+            <ss-button-icon [fill]="false" icon="chevron-right" color="cinza" (click)="alterarMes('up')">
+            </ss-button-icon>
+        </div>
     </div>
-    <div class="col-sm-1">
-        <ss-button-icon [fill]="false" icon="chevron-right" color="cinza" (click)="alterarGrid(true)"></ss-button-icon>
+    <div class="row">
+        <div class="col-sm-1">
+            <ss-button-icon [fill]="false" icon="chevron-left" color="cinza" (click)="alterarGrid(false)">
+            </ss-button-icon>
+        </div>
+        <div class="col-sm-2">
+            Dias
+        </div>
+        <div class="col-sm-1">
+            <ss-button-icon [fill]="false" icon="chevron-right" color="cinza" (click)="alterarGrid(true)">
+            </ss-button-icon>
+        </div>
     </div>
 </div>
 
-<div class="wrapper">
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th *ngFor="let num of showDias">{{days[num].data}}, {{days[num].day.curto}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hora of hours">
+            <td class="label">{{hora.hour}}</td>
+            <td class="dias" *ngFor="let num of showDias; let i = index" (click)="diaSelecionado(hora.hour, num)"
+                (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <div class="wrapper">
     <div class="dias">
         <div class="dia" *ngFor="let num of showDias">
             {{days[num].data}}, {{days[num].day.curto}}
@@ -18,4 +54,4 @@
         <div class="lista" *ngFor="let num of showDias; let i = index" (click)="diaSelecionado(hora.hour, num)" (mouseenter)="mouseEnter($event)" (mouseleave) ="mouseLeave($event)">
         </div>
     </div>
-</div>
+</div> -->
