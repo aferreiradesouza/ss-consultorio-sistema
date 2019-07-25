@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-item',
-  templateUrl: './item.page.html',
+  templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
 

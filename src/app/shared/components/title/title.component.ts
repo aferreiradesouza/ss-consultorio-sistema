@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-title',
-  templateUrl: './title.page.html',
+  templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
 

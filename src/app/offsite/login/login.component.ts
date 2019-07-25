@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'ss-login',
@@ -9,22 +10,28 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public isLoading: boolean = false;
+  public errorMessage: string;
+  public timeout: any;
 
   public form = new FormGroup({
     email: new FormControl('', [Validators.required]),
     senha: new FormControl('', [Validators.required])
   });
 
-  constructor() {}
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
 
   }
 
-  alternar() {
+  logar() {
     this.isLoading = true;
-    setTimeout(() => {
+    this.errorMessage = null;
+    this.authService.logar(this.form.value).then(() => {
       this.isLoading = false;
-    }, 2000);
+    }).catch((err) => {
+      this.isLoading = false;
+      this.errorMessage = err.error.message;
+    });
   }
 }

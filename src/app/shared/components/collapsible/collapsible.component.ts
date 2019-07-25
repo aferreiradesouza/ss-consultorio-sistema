@@ -2,7 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef }
 
 @Component({
   selector: 'ss-collapsible',
-  templateUrl: './collapsible.page.html',
+  templateUrl: './collapsible.component.html',
   styleUrls: ['./collapsible.component.scss']
 })
 export class CollapsibleComponent implements OnInit {

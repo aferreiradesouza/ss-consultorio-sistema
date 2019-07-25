@@ -5,6 +5,7 @@ import { ComponentsModule } from '../shared/components/components.module';
 import { LoginComponent } from './login/login.component';
 import { StyleGuideComponent } from './styleguide/styleguide.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         ComponentsModule,
         FormsModule,
         ReactiveFormsModule,
+        SharedModule.forRoot()
     ],
     providers: [
     ],

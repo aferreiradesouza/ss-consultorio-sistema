@@ -7,8 +7,6 @@ import { AlertComponent } from './alert/alert.component';
 import { ButtonGroupComponent } from './button-group/button-group.component';
 import { ProgressComponent } from './progress/progress.component';
 import { MenuComponent } from './menu/menu.component';
-import { FormatterService } from '../formatter.service';
-import { ValidatorService } from '../validator.service';
 import { InputComponent } from './input/input.component';
 import { ButtonActionComponent } from './button-action/button-action.component';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
@@ -17,8 +15,11 @@ import { CardsComponent } from './cards/cards.component';
 import { TitleComponent } from './title/title.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { IconComponent } from './icon/icon.component';
+import { SharedModule } from '../shared.module';
+import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
 
-const Components = [
+const components = [
   MenuComponent,
   ButtonComponent,
   ItemComponent,
@@ -32,24 +33,22 @@ const Components = [
   CardsComponent,
   TitleComponent,
   CalendarioComponent,
-  DialogComponent
+  DialogComponent,
+  IconComponent,
+  AutoCompleteComponent
 ];
 
+const declarations = [...components];
+
 @NgModule({
-  declarations: [
-    Components
-  ],
+  declarations,
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    Components
-  ],
-  providers: [
-    FormatterService,
-    ValidatorService
+    declarations
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 @Component({
   selector: 'ss-calendario',
-  templateUrl: './calendario.page.html',
+  templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.scss']
 })
 

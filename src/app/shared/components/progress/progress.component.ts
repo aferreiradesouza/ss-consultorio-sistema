@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-progress',
-  templateUrl: './progress.page.html',
+  templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss']
 })
 

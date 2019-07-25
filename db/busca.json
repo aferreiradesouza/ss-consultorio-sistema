@@ -1,0 +1,39 @@
+{
+    "busca": [
+        {
+            "pacientes": [
+                {
+                    "nome": "Arthur"
+                },
+                {
+                    "nome": "Rafael"
+                },
+                {
+                    "nome": "Gabriella"
+                },
+                {
+                    "nome": "Luci"
+                },
+                {
+                    "nome": "Sérgio"
+                }
+            ]
+        },
+        {
+            "consultas": [
+                {
+                    "numero": 104564
+                },
+                {
+                    "numero": 893548
+                },
+                {
+                    "numero": 879463
+                },
+                {
+                    "numero": 213286
+                }
+            ]
+        }
+    ]
+}

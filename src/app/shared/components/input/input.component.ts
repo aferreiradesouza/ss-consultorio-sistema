@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Self, ElementRef, ViewChild, Optional } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { FormatterService } from '../../formatter.service';
-import { ValidatorService } from '../../validator.service';
-import { TestBed } from '@angular/core/testing';
+import { FormatterService } from '../../services/formatter.service';
+import { ValidatorService } from '../../services/validator.service';
 
 @Component({
     selector: 'ss-input',

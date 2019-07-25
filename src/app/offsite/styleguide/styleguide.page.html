@@ -1,20 +1,30 @@
 <ss-menu>
-    <p>Button com preenchimento:</p>
-    <div class="row margin-bottom">
-        <div class="col" *ngFor="let item of buttonsComPreenchimento">
-            <ss-button [fill]="true" [label]="item.label" [disabled]="item.disabled" [color]="item.color">
-            </ss-button>
-        </div>
-    </div>
+    <div class="container">
 
-    <p>Button sem preenchimento:</p>
-    <div class="row margin-bottom">
-        <div class="col" *ngFor="let item of buttonsComPreenchimento">
-            <ss-button [fill]="false" [label]="item.label" [disabled]="item.disabled" [color]="item.color">
-            </ss-button>
+        <div class="bg-dark p-3">
+            <ss-autocomplete></ss-autocomplete>
         </div>
-    </div>
-    <pre>
+        
+        <p>Button com preenchimento:</p>
+        <div class="row margin-bottom">
+            <div class="col" *ngFor="let item of buttonsComPreenchimento">
+                <ss-button [fill]="true" [label]="item.label" [disabled]="item.disabled" [color]="item.color">
+                </ss-button>
+            </div>
+        </div>
+
+        <p>Button sem preenchimento:</p>
+        <div class="row margin-bottom">
+            <div class="col" *ngFor="let item of buttonsComPreenchimento">
+                <ss-button [fill]="false" [label]="item.label" [disabled]="item.disabled" [color]="item.color">
+                </ss-button>
+            </div>
+        </div>
+
+        <p>Icon:</p>
+        <ss-icon icon="chevron-right"></ss-icon>
+
+        <pre>
         <code>&lt;ss-button [fill]="boolean" [label]="string" [disabled]="boolean" [color]="string"&gt;&lt;/ss-button&gt;
             color: &#123;
                 azul,
@@ -28,22 +38,22 @@
             &#125;
         </code>
     </pre>
-    <div class="row margin-bottom">
-        <div class="col" *ngFor="let item of itens">
-            <ss-item [label]="'Item '+item" [bold]="true" [value]="'Value item '+item"></ss-item>
+        <div class="row margin-bottom">
+            <div class="col" *ngFor="let item of itens">
+                <ss-item [label]="'Item '+item" [bold]="true" [value]="'Value item '+item"></ss-item>
+            </div>
         </div>
-    </div>
-    <pre>
+        <pre>
         <code>&lt;ss-item [label]="string" [bold]="boolean" [value]="string | number"&gt;&lt;/ss-item&gt;
         </code>
     </pre>
-    <p>Alerts:</p>
-    <ss-alert title="Parabéns" mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
-    <ss-alert title="Ops!" mensagem="Texto de Erro" type="erro"></ss-alert>
-    <ss-alert title="Info" mensagem="Texto de Info" type="info"></ss-alert>
-    <ss-alert title="Atenção" mensagem="Texto de atenção" type="atencao"></ss-alert>
+        <p>Alerts:</p>
+        <ss-alert title="Parabéns" mensagem="Texto de Sucesso" type="sucesso"></ss-alert>
+        <ss-alert title="Ops!" mensagem="Texto de Erro" type="erro"></ss-alert>
+        <ss-alert title="Info" mensagem="Texto de Info" type="info"></ss-alert>
+        <ss-alert title="Atenção" mensagem="Texto de atenção" type="atencao"></ss-alert>
 
-    <pre>
+        <pre>
         <code>&lt;ss-alert [title]="string" [mensagem]="string" [type]="string"&gt;&lt;/ss-alert&gt;
             type: &#123;
                 sucesso,
@@ -53,13 +63,13 @@
             &#125;
         </code>
     </pre>
-    <p>Button group:</p>
-    <div class="row margin-bottom">
-        <div class="col">
-            <ss-button-group [group]="buttonGroup"></ss-button-group>
+        <p>Button group:</p>
+        <div class="row margin-bottom">
+            <div class="col">
+                <ss-button-group [group]="buttonGroup"></ss-button-group>
+            </div>
         </div>
-    </div>
-    <pre>
+        <pre>
         <code>&lt;ss-button-group [group]="array"&gt;&lt;/ss-button-group&gt;
             array.color: &#123;
                 azul,
@@ -73,27 +83,27 @@
             &#125;
         </code>
     </pre>
-    <p>Progress normal:</p>
-    <div class="row margin-bottom">
-        <div class="col-12">
-            <ss-progress value="62" [animated]="false" [decoracao]="false" color="azul"></ss-progress>
+        <p>Progress normal:</p>
+        <div class="row margin-bottom">
+            <div class="col-12">
+                <ss-progress value="62" [animated]="false" [decoracao]="false" color="azul"></ss-progress>
+            </div>
         </div>
-    </div>
 
-    <p>Progress com decoracao:</p>
-    <div class="row margin-bottom">
-        <div class="col-12">
-            <ss-progress value="62" [animated]="false" [decoracao]="true" color="azul"></ss-progress>
+        <p>Progress com decoracao:</p>
+        <div class="row margin-bottom">
+            <div class="col-12">
+                <ss-progress value="62" [animated]="false" [decoracao]="true" color="azul"></ss-progress>
+            </div>
         </div>
-    </div>
 
-    <p>Progress com decoração e animação:</p>
-    <div class="row margin-bottom">
-        <div class="col-12">
-            <ss-progress value="62" [animated]="true" [decoracao]="true" color="azul"></ss-progress>
+        <p>Progress com decoração e animação:</p>
+        <div class="row margin-bottom">
+            <div class="col-12">
+                <ss-progress value="62" [animated]="true" [decoracao]="true" color="azul"></ss-progress>
+            </div>
         </div>
-    </div>
-    <pre>
+        <pre>
         <code>&lt;ss-progress [value]="string" [animated]="boolean" [decoracao]="boolean" [color]="string"&gt;&lt;/ss-progress&gt;
             color: &#123;
                 azul,
@@ -104,11 +114,12 @@
             &#125;
         </code>
     </pre>
-    <form [formGroup]="form">
-        <ss-input label="Nome" formControlName="name"></ss-input>
-        {{form.value.name | json}}
-    </form>
+        <form [formGroup]="form">
+            <ss-input label="Nome" formControlName="name"></ss-input>
+            {{form.value.name | json}}
+        </form>
 
-    <ss-button-action [fill]="true" label="Login" [disabled]="false" color="azul" [isLoading]="isLoading"
-        (click)="alternar()"></ss-button-action>
+        <ss-button-action [fill]="true" label="Login" [disabled]="false" color="azul" [isLoading]="isLoading"
+            (click)="alternar()"></ss-button-action>
+    </div>
 </ss-menu>

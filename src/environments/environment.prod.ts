@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  login: '__login__',
+  baseUrl: '__baseUrl__',
 };

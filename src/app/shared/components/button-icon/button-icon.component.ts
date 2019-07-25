@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-button-icon',
-  templateUrl: './button-icon.page.html',
+  templateUrl: './button-icon.component.html',
   styleUrls: ['./button-icon.component.scss']
 })
 

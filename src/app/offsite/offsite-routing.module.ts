@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'styleguide', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'styleguide', component: StyleGuideComponent },
     { path: 'login', component: LoginComponent },
 ];

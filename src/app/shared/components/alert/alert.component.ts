@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-alert',
-  templateUrl: './alert.page.html',
+  templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
 

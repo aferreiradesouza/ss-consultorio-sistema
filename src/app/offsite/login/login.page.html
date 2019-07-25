@@ -11,9 +11,10 @@
             </div>
             <div class="card-body">
                 <form [formGroup]="form">
+                    <ss-alert *ngIf="errorMessage" title="Ops: " [mensagem]="errorMessage" type="erro"></ss-alert>
                     <div class="row">
                         <div class="col-sm">
-                            <ss-input label="E-mail" formControlName="email" [required]="true"></ss-input>
+                            <ss-input (keypress)="buscar()" label="E-mail" type="email" formControlName="email" [required]="true"></ss-input>
                         </div>
                     </div>
                     <div class="row">
@@ -22,10 +23,10 @@
                             </ss-input>
                         </div>
                     </div>
-                    <div class="d-flex flex-row-reverse">
-                        <ss-button-action [fill]="true" label="Entrar" loadingLabel="Entrando..." [disabled]="false"
-                            color="azul" [isLoading]="isLoading" (click)="alternar()"></ss-button-action>
+                    <div class="d-flex justify-content-end">
                         <ss-button class="mr-2" [fill]="false" label="Esqueceu sua senha?" color="verde"></ss-button>
+                        <ss-button-action (click)="logar()" [fill]="true" label="Entrar" loadingLabel="Entrando..." [disabled]="!form.valid"
+                            color="azul" [isLoading]="isLoading"></ss-button-action>
                     </div>
                 </form>
             </div>

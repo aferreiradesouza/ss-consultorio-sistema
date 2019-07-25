@@ -5,7 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'ss-menu',
-  templateUrl: './menu.page.html',
+  templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 

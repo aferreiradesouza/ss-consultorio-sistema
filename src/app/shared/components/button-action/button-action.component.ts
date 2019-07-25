@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'ss-button-action',
-  templateUrl: './button-action.page.html',
+  templateUrl: './button-action.component.html',
   styleUrls: ['./button-action.component.scss']
 })
 

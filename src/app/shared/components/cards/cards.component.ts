@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'ss-card',
-    templateUrl: './cards.page.html',
+    templateUrl: './cards.component.html',
     styleUrls: ['./cards.component.scss']
 })
 

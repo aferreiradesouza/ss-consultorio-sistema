@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'ss-dialog',
-  templateUrl: './dialog.page.html',
+  templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
 
