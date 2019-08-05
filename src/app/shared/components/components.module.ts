@@ -18,6 +18,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { IconComponent } from './icon/icon.component';
 import { SharedModule } from '../shared.module';
 import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
+import { AutoCompleteLoadingComponent } from './content-loading/autocomplete-loading/autocomplete-loading.component';
 
 const components = [
   MenuComponent,
@@ -38,7 +39,11 @@ const components = [
   AutoCompleteComponent
 ];
 
-const declarations = [...components];
+const componentLoadings = [
+  AutoCompleteLoadingComponent
+];
+
+const declarations = [...components, ...componentLoadings];
 
 @NgModule({
   declarations,

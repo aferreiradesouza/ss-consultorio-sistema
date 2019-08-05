@@ -1,11 +1,15 @@
 <ss-menu>
     <div class="container">
 
-        <div class="bg-dark p-3">
+        <div>
             <ss-autocomplete></ss-autocomplete>
         </div>
         
-        <p>Button com preenchimento:</p>
+        <div class="loading">
+            <p>loading:</p>
+            <ss-autocomplete-loading></ss-autocomplete-loading>
+        </div>
+
         <div class="row margin-bottom">
             <div class="col" *ngFor="let item of buttonsComPreenchimento">
                 <ss-button [fill]="true" [label]="item.label" [disabled]="item.disabled" [color]="item.color">

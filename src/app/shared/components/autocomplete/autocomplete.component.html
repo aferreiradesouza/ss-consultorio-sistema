@@ -1,6 +1,14 @@
-<div class="p-1 bg-white rounded wrapper">
-    <ss-input (keypress)="buscar(data)" [(ngModel)]="data"></ss-input>
-    <div class="resultado" *ngIf="resultado">
-
+<div class="p-1 rounded wrapper" [ngClass]="{'bg-white active' : showItensLoading(data)}">
+    <ss-input (blur)="showItensLoading('')" [placeholder]="placeholder" (input)="buscar(data)" [(ngModel)]="data"></ss-input>
+    <div class="resultado" *ngIf="showItensLoading(data)">
+        <ng-container *ngIf="!resultado">
+            <div class="item-loading" *ngFor="let item of obterArray(3)">
+                <ss-autocomplete-loading></ss-autocomplete-loading>
+            </div>
+        </ng-container>
+        <div class="item" *ngFor="let item of resultado">
+            <div class="icon"></div>
+            <div class="txt"></div>
+        </div>
     </div>
 </div>

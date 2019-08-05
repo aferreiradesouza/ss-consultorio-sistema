@@ -158,7 +158,7 @@
 
     > .busca {
       width: calc(100% - 220px);
-      padding: 7px 20px 0px 20px;
+      padding: 2px 20px 0px 20px;    
     }
 
     > .msgBemVindo {
@@ -176,13 +176,15 @@
 
   > .busca-responsiva {
     margin-top: 72px;
-    padding: 10px;
+    padding: 10px 10px 15px 10px;
     background-color: $medium-light-10;
     display: none;
     height: 58px;
-
-    ss-input {
-      z-index: -1;
+    
+    ss-autocomplete {
+      position: absolute;
+      z-index: 10;
+      width: calc(100% - 100px);
     }
   }
 
@@ -222,7 +224,7 @@
 
 @media (max-width: 488px) {
   .busca {
-    display: none;
+    display: none !important;
   }
 
   .busca-responsiva {

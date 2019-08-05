@@ -13,4 +13,8 @@ export class AutoCompleteService {
         const url = `${environment.baseUrl}busca`;
         return this.ajaxService.get<any>(url);
     }
+
+    criarArray(numero: number): string[] {
+        return ' '.repeat(numero).split('');
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Self, ElementRef, ViewChild, Optional } from '@angular/core';
+import { Component, OnInit, Input, Self, ElementRef, ViewChild, Optional, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { FormatterService } from '../../services/formatter.service';
 import { ValidatorService } from '../../services/validator.service';
@@ -38,6 +38,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     @Input() placeholder: string = '';
     @Input() required: boolean = false;
     @Input() maxLength: number = 0;
+
+    @Output() blur = new EventEmitter();
 
     @ViewChild('input') private input: ElementRef;
 
@@ -81,6 +83,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
         this.onTouched();
         this.validate(value);
+        this.blur.emit();
     }
 
 
