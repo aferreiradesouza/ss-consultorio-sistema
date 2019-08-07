@@ -9,11 +9,6 @@ export class HomeComponent implements OnInit {
   public breadcrumb: Array<{route: string, label: string}>;
 
   constructor() {
-    this.breadcrumb = [
-      {route: 'home', label: 'Início'},
-      {route: 'consultas', label: 'Consultas'},
-      {route: 'cancelar-consulta', label: 'Cancelar consulta'},
-    ];
   }
 
   ngOnInit() {

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './shared/components/components.module';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 
@@ -18,7 +17,6 @@ import { NgProgressRouterModule } from '@ngx-progressbar/router';
     AppRoutingModule,
     ComponentsModule,
     SharedModule,
-    HomeModule,
     NgProgressModule,
     NgProgressRouterModule,
   ],

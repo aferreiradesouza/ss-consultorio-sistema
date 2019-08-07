@@ -19,6 +19,7 @@ import { IconComponent } from './icon/icon.component';
 import { SharedModule } from '../shared.module';
 import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
 import { AutoCompleteLoadingComponent } from './content-loading/autocomplete-loading/autocomplete-loading.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 const components = [
   MenuComponent,
@@ -50,7 +51,8 @@ const declarations = [...components, ...componentLoadings];
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSkeletonLoaderModule
   ],
   exports: [
     declarations

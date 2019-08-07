@@ -26,8 +26,10 @@ export class AutoCompleteComponent implements OnInit {
 
     buscar(data: string) {
         clearTimeout(this.timeout);
+        this.showSearch = true;
         if (data === '') {
             this.resultado = null;
+            this.showSearch = false;
             return;
         }
         this.timeout = setTimeout(() => {
@@ -50,5 +52,11 @@ export class AutoCompleteComponent implements OnInit {
 
     showItensLoading(data): boolean {
         return !!data;
+    }
+
+    shouldShowSearch(show: boolean) {
+        this.resultado = null;
+        this.showSearch = false;
+        console.log(this.resultado);
     }
 }

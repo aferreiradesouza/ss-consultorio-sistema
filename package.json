@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
     "ngx-progressbar": "^2.1.1",
+    "ngx-skeleton-loader": "^1.2.2",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

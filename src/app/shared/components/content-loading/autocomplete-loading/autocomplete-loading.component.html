@@ -1,12 +1,9 @@
 <div class="wrapper">
     <div class="img">
-        <div class="colorBg rounded-circle h-100 w-100 overflow-hidden">
-            <div class="animation"></div>
-        </div>
+        <ngx-skeleton-loader appearance="circle" [theme]="{ width: '100%', height: '100%' }"></ngx-skeleton-loader>
     </div>
     <div class="txt">
-        <div class="colorBg h-100 w-100 overflow-hidden">
-            <div class="animation animation-txt"></div>
-        </div>
+        <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 'border-radius': '0', height: '15px', 'margin-bottom': '0px', 'margin-left': '10px', width: '45%', 'margin-top': '5px' }"> </ngx-skeleton-loader>
+        <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 'border-radius': '0', height: '20px', 'margin-bottom': '10px', 'margin-left': '10px' }"> </ngx-skeleton-loader>
     </div>
 </div>

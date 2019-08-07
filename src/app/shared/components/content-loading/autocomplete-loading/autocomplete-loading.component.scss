@@ -1,44 +1,15 @@
 .wrapper {
   height: 100%;
   width: 100%;
-  display: inline-flex;
+  display: flex;
 
   > .img {
-      width: 45px;
-      margin-right: 5px;
+      width: 50px;
+      height: 100%;
   }
 
   > .txt {
       width: calc(100% - 50px);
   }
-
-  .colorBg {
-    background-color: #f8f8f8;
-    position: relative;
-
-    .animation {
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 53%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      width: 50px;
-      height: calc(100% + 30px);
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: mymove 0.4s infinite;
-      animation-timing-function: linear;
-    }
-  }
 }
 
-@keyframes mymove {
-  from {
-    left: -50%;
-  }
-  to {
-    left: 100%;
-  }
-}

@@ -185,16 +185,16 @@ export class CalendarioComponent implements OnInit {
     return Math.ceil(count);
   }
 
-  mouseEnter(event: MouseEvent) {
-    event.srcElement['bgColor'] = '#b2e2bc';
-    event.srcElement['width'] = `${event.srcElement['clientWidth']}px`;
-    event.srcElement['innerHTML'] =
-    `<div style="font-size: 13px; cursor: pointer">Marcar horário</div>`;
-  }
+  // mouseEnter(event: MouseEvent) {
+  //   event.srcElement['bgColor'] = '#b2e2bc';
+  //   event.srcElement['width'] = `${event.srcElement['clientWidth']}px`;
+  //   event.srcElement['innerHTML'] =
+  //   `<div style="font-size: 13px; cursor: pointer">Marcar horário</div>`;
+  // }
 
-  mouseLeave(event: MouseEvent) {
-    event.srcElement['width'] = '';
-    event.srcElement['bgColor'] = '';
-    event.srcElement['innerHTML'] = '';
-  }
+  // mouseLeave(event: MouseEvent) {
+  //   event.srcElement['width'] = '';
+  //   event.srcElement['bgColor'] = '';
+  //   event.srcElement['innerHTML'] = '';
+  // }
 }
