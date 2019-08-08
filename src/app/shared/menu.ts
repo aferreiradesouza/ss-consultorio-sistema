@@ -3,28 +3,31 @@ interface MenuItem {
     href: string;
     type: string;
     icon?: string;
+    active?: string;
     selected?: boolean;
     children?: MenuItem[];
 }
 
 export const menuItem: MenuItem[] = [
     {
-        label: 'Início', type: 'level1', href: 'home', icon: 'fa-home', selected: false, children: [
-            { label: 'Agenda', type: 'level2', href: 'home/agenda'},
-            { label: 'Criar consulta', type: 'level2', href: 'home/criar-consulta'},
-            { label: 'Cancelar consulta', type: 'level2', href: 'home/cancelar-consulta'},
-            { label: 'Modificar consulta', type: 'level2', href: 'home/modificar-consulta'}
+        label: 'Início', type: 'level1', href: 'home', icon: 'fa-home', active: 'home', selected: false, children: []
+    },
+    {
+        label: 'Médico', type: 'level1', href: 'medico', icon: 'fa-user-md', active: 'medico', selected: false, children: [
+            { label: 'Agenda do dia', type: 'level2', href: 'medico/agenda-do-dia', active: 'medico'},
         ]
     },
     {
-        label: 'Clientes', type: 'level1', href: 'clientes', icon: 'fa-user-circle', selected: false, children: [
-            { label: 'Listar clientes', type: 'level2', href: 'clientes/listar-clientes'},
-            { label: 'Criar clientes', type: 'level2', href: 'clientes/criar-clientes'},
-            { label: 'Cancelar clientes', type: 'level2', href: 'clientes/cancelar-clientes'},
-            { label: 'Modificar clientes', type: 'level2', href: 'clientes/modificar-clientes'}
+        label: 'Secretária', type: 'level1', href: 'secretaria', icon: 'fa-address-book', active: 'secretaria', selected: false, children: [
+            { label: 'Calendário', type: 'level2', href: 'secretaria/calendario', active: 'secretaria'},
         ]
     },
     {
-        label: 'Opções', href: '', icon: 'fa-cog', type: 'level1', selected: false, children: []
+        label: 'Paciente', type: 'level1', href: 'paciente', icon: 'fa-user-circle', active: 'paciente', selected: false, children: [
+            { label: 'Listagem de paciente', type: 'level2', href: 'paciente/listagem', active: 'paciente'},
+        ]
+    },
+    {
+        label: 'Configurações', href: '', icon: 'fa-cog', type: 'level1', selected: false, children: []
     }
 ];

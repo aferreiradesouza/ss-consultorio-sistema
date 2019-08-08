@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class TitleComponent implements OnInit {
 
-  @Input() title: string;
+  @Input() header: string;
 
 
   constructor(public router: Router) { }

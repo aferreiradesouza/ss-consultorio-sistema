@@ -97,8 +97,8 @@
 
     .group-sub-item {
       width: calc(100% - 20px);
-      margin: 10px;
       background-color: $white;
+      margin: 10px;
       border-radius: 10px;
 
       .item-list {
@@ -272,7 +272,7 @@
         }
 
         img {
-          height: 35px !important;
+          height: 25px !important;
           margin-right: 0 !important;
         }
       }
@@ -292,8 +292,12 @@
     }
   }
 
-  .item-list {
+  .group-sub-item {
     display: none;
+
+    .item-list {
+      display: none;
+    }
   }
 
   .content {

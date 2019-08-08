@@ -1,13 +1,8 @@
-<div class="card-ss" [ngClass]="getType()">
-    <div class="title">
-        {{title}}
+<div class="card text-white mb-2" [ngClass]="getType()">
+    <div class="card-header">
+        {{header}}
     </div>
-    <div class="value">
-        <div class="label">
-            {{label}}
-        </div>
-        <div class="text-center">
-            {{value}}
-        </div>
+    <div class="card-body">
+        {{value}}
     </div>
 </div>

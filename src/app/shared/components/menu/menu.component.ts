@@ -81,11 +81,15 @@ export class MenuComponent implements OnInit {
   }
 
   selectTab(event, item) {
-    console.log(event, item);
+    if (item.children.length === 0) {
+      console.log(item.href);
+      this.router.navigate(item.href);
+    }
   }
 
   setActiveMenu(label) {
-    if (this.active === label) {
+    const active = this.route.snapshot.data.active;
+    if (active === label) {
       return ['activeMenu'];
     }
     return '';
@@ -98,6 +102,7 @@ export class MenuComponent implements OnInit {
 
   navegar(url: string) {
     if (!url) { return; }
+    console.log('a');
     const urlDestino = url.split('/');
     this.router.navigate(urlDestino);
   }

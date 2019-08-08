@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class CardsComponent implements OnInit {
 
-    @Input() title: string;
+    @Input() header: string;
     @Input() label: string;
     @Input() value: any;
     @Input() type?: string;
@@ -22,9 +22,9 @@ export class CardsComponent implements OnInit {
     getType() {
         const ret = [];
 
-        if (this.type === 'warning') {ret.push('border-yellow yellow'); }
-        if (this.type === 'danger') {ret.push('border-red red'); }
-        if (this.type === 'success') {ret.push('border-green green'); }
+        if (this.type === 'warning') {ret.push('bg-warning'); }
+        if (this.type === 'danger') {ret.push('bg-danger'); }
+        if (this.type === 'success') {ret.push('bg-success'); }
 
         return ret;
     }

@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'offsite', pathMatch: 'full' },
   { path: 'offsite', loadChildren: './offsite/offsite.module#OffSiteModule', data: {breadcrumb: 'Offsite', active: 'offsite'} },
   { path: 'home', loadChildren: './home/home.module#HomeModule', data: {breadcrumb: 'Início', active: 'home'} },
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', data: {breadcrumb: 'Dashboard', active: 'dashboard'} },
 ];
 
 @NgModule({
