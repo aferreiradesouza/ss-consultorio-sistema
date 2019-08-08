@@ -60,7 +60,7 @@
         }
 
         .small-img {
-          height: 35px;
+          height: 25px;
         }
 
         .margin-right {
@@ -137,13 +137,13 @@
 
 .content {
   overflow-y: auto;
-  max-width: calc(100% - 80px);
+  max-width: calc(100% - 60px);
   width: 100%;
   margin-left: 250px;
   transition: 0.3s all;
 
   > .fix-header {
-    width: calc(100% - 80px) !important;
+    width: calc(100% - 60px) !important;
   }
 
   > .header {
@@ -262,8 +262,8 @@
   }
 
   .sidebar {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 60px;
+    max-width: 60px;
 
     > .sidebar-header {
       > div {
@@ -281,7 +281,7 @@
 
   .title-list {
     text-align: center;
-    font-size: 25px !important;
+    font-size: 1rem !important;
 
     &:active {
       background-color: $dark-primary !important;
@@ -298,17 +298,17 @@
 
   .content {
     overflow-y: auto;
-    max-width: calc(100% - 80px);
-    margin-left: 80px;
+    max-width: calc(100% - 60px);
+    margin-left: 60px;
     transition: 0.3s all;
 
     > .fix-header {
-      width: calc(100% - 80px) !important;
+      width: calc(100% - 60px) !important;
     }
 
     > .header {
       display: inline-flex;
-      width: calc(100% - 80px);
+      width: calc(100% - 60px);
       background-color: $dark-primary;
       position: fixed;
       padding: 10px;
