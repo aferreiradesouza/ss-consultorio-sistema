@@ -62,15 +62,13 @@ export class MenuComponent implements OnInit {
     return index + 1 !== this.routes.length;
   }
 
-  public selectBreadcrumb(route: { route: string, label: string }): void {
+  selectBreadcrumb(url): void {
     const destino = [];
     for (const item of this.routes) {
+      console.log(item);
       destino.push(item.route);
-      if (item.label === route.label) {
-        break;
-      }
     }
-    this.router.navigate(destino);
+    // this.router.navigate(destino);
   }
 
   alternar() {
@@ -82,8 +80,7 @@ export class MenuComponent implements OnInit {
 
   selectTab(event, item) {
     if (item.children.length === 0) {
-      console.log(item.href);
-      this.router.navigate(item.href);
+      this.router.navigate([item.href]);
     }
   }
 
@@ -96,13 +93,11 @@ export class MenuComponent implements OnInit {
   }
 
   pop() {
-    console.log('pop');
     this.dialog.toggle();
   }
 
   navegar(url: string) {
     if (!url) { return; }
-    console.log('a');
     const urlDestino = url.split('/');
     this.router.navigate(urlDestino);
   }

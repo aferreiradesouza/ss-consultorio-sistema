@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ss-dashboard',
-  templateUrl: './dashboard.page.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'ss-medico',
+  templateUrl: './medico.page.html',
+  styleUrls: ['./medico.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class MedicoComponent implements OnInit {
   public breadcrumb: Array<{route: string, label: string}>;
 
   constructor() {

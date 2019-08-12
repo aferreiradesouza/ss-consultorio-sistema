@@ -3,10 +3,36 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'offsite', pathMatch: 'full' },
-  { path: 'offsite', loadChildren: './offsite/offsite.module#OffSiteModule', data: {breadcrumb: 'Offsite', active: 'offsite'} },
-  { path: 'home', loadChildren: './home/home.module#HomeModule', data: {breadcrumb: 'Início', active: 'home'} },
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', data: {breadcrumb: 'Dashboard', active: 'dashboard'} },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'offsite',
+    loadChildren: './offsite/offsite.module#OffSiteModule',
+    data: { breadcrumb: 'Offsite', active: 'offsite' }
+  },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule',
+    data: { breadcrumb: 'Início', active: 'home' }
+  },
+  {
+    path: 'medico',
+    loadChildren: './medico/medico.module#MedicoModule',
+    data: { breadcrumb: 'Médico', active: 'medico' }
+  },
+  {
+    path: 'secretaria',
+    loadChildren: './secretaria/secretaria.module#SecretariaModule',
+    data: { breadcrumb: 'Secretaria', active: 'secretaria' }
+  },
+  {
+    path: 'paciente',
+    loadChildren: './paciente/paciente.module#PacienteModule',
+    data: { breadcrumb: 'Pacientes', active: 'paciente' }
+  },
 ];
 
 @NgModule({

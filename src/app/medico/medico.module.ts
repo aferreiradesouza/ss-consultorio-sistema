@@ -2,15 +2,21 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from '../shared/components/components.module';
-import { DashboardComponent } from './dashboard.component';
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { MedicoRoutingModule } from './medico-routing.module';
+import { MedicoComponent } from './medico.component';
+import { AgendaMedicoComponent } from './agenda/agenda.component';
+
+const pages = [
+    AgendaMedicoComponent,
+    MedicoComponent
+];
 
 @NgModule({
     declarations: [
-        DashboardComponent
+        ...pages
     ],
     imports: [
-        DashboardRoutingModule,
+        MedicoRoutingModule,
         CommonModule,
         FormsModule,
         ComponentsModule,
@@ -20,4 +26,4 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class DashboardModule { }
+export class MedicoModule { }

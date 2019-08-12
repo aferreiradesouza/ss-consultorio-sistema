@@ -14,7 +14,7 @@ export const menuItem: MenuItem[] = [
     },
     {
         label: 'Médico', type: 'level1', href: 'medico', icon: 'fa-user-md', active: 'medico', selected: false, children: [
-            { label: 'Agenda do dia', type: 'level2', href: 'medico/agenda-do-dia', active: 'medico'},
+            { label: 'Agenda do dia', type: 'level2', href: 'medico/agenda-dia', active: 'medico'},
         ]
     },
     {
