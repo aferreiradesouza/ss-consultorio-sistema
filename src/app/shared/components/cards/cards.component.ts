@@ -13,6 +13,7 @@ export class CardsComponent implements OnInit {
     @Input() label: string;
     @Input() value: any;
     @Input() type?: string;
+    @Input() url: string;
 
     constructor(public router: Router) { }
 
