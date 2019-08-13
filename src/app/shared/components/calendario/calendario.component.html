@@ -1,17 +1,32 @@
 <div class="wrapper">
     <div class="header">
         <div class="d-flex">
-            <div class="eixo-hora"></div>
-            <div class="dataSemana" *ngFor="let dia of obterArray; let i = index">
-                <span>SEG</span>
+            <div class="eixo-hora-header"></div>
+            <div class="dataSemana" *ngFor="let dia of obterArray(7); let i = index">
+                <span [ngClass]="{'active' : i === 0}">SEG</span>
                 <div class="dia" [ngClass]="{'active' : i === 0}">
-                    {{i}}
+                    {{i + 1}}
                 </div>
             </div>
         </div>
         <div class="decorator">
-            <div class="eixo-hora-decorator">hora</div>
-            <div class="decorator-cell" *ngFor="let dia of obterArray; let i = index"></div>
+            <div class="eixo-hora-header-decorator"></div>
+            <div class="decorator-cell" *ngFor="let dia of obterArray(7); let i = index"></div>
+        </div>
+    </div>
+    <div class="corpo">
+        <div class="grid" [ngStyle]="{'top': 48 * i+'px'}" *ngFor="let hora of obterHoras(); let i = index">
+        </div>
+        <div class="eixo-hora">
+            <div class="horas" *ngFor="let hora of obterHoras(); let i = index">
+                {{pegarHora(i + 1)}}
+            </div>
+        </div>
+        <div class="eixo-dia" *ngFor="let dia of obterArray(7); let i = index">
+            <div class="grid-get-hour" (click)="clickHora(i + 1, index + 1)"
+             *ngFor="let hora of obterArray(24*4); let index = index">
+
+            </div>
         </div>
     </div>
 </div>
