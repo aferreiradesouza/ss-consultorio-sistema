@@ -1,90 +1,79 @@
 @import "../../variables.scss";
 
-.painel {
-  width: 100%;
-  background-color: $medium-light-10;
-  height: 150px;
-  margin-bottom: 20px;
-
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
+$width-dia: 13.4285%;
+$width-hora: 6%;
 
 .wrapper {
+  position: relative;
   width: 100%;
-  overflow: hidden;
+  height: 700px;
+  overflow-y: auto;
 
-  > .dias {
-    display: inline-flex;
-    margin-left: 40px;
-    width: calc(100% - 40px);
-
-    > .dia {
-      width: 14.98%;
-      padding: 5px 0px;
-      text-align: center;
-      background-color: $medium-light-10;
-      font-size: 13px;
-    }
-  }
-
-  > .hours {
-    display: inline-flex;
+  > .header {
+    position: sticky;
     width: 100%;
+    height: 80px;
+    background-color: #f8f8f8;
+    top: 0;
 
-    &:first-child {
-      border-top: 1px solid $darken-light-30;
-    }
+    > div {
+      height: calc(100% - 20px);
 
-    > .label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 41px;
-      font-size: 12px;
-      background-color: $white;
-      color: $white;
-    }
+      > .eixo-hora {
+        width: $width-hora;
+        position: relative;
+      }
 
-    > .lista {
-      height: 100px;
-      width: 15.08%;
-      border-left: 1px solid $darken-light-30;
-      border-bottom: 1px solid $darken-light-30;
+      > .dataSemana {
+        width: $width-dia;
+        position: relative;
 
-      &:last-child {
-        border-right: 1px solid $darken-light-30;
+        > span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -100%);
+          font-size: 13px;
+        }
+
+        > .dia {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -5%);
+          padding: 5px 12.6px;
+          border-radius: 100%;
+          font-size: 14px;
+
+          &.active {
+            background-color: red;
+            color: white;
+          }
+        }
       }
     }
-  }
-}
 
-table {
-  width: 100%;
+    > .decorator {
+      width: 100%;
+      height: 20px;
+      display: flex;
 
-  > thead > tr > th {
-    background-color: $medium-light-10;
-    font-size: 13px;
-    text-align: center;
-  }
+      > .eixo-hora-decorator {
+        width: $width-hora;
+        height: 100%;
+        border-bottom: 1px solid black;
+      }
 
-  > tbody > tr {
+      > .decorator-cell {
+        width: $width-dia;
+        height: 100%;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
 
-    .label {
-      background-color: lighten($very-light-primary, 50%);
-      color: $black;
-      text-align: center;
-      max-width: 97px !important;
-    }
-
-    .dias {
-      // border-right: 1px solid $medium-dark-10;
-      padding: 0;
-      height: 65px;
-    }
-
-    td {
-      font-size: 12px;
+        &:last-child {
+          border-right: 1px solid black;
+        }
+      }
     }
   }
 }
