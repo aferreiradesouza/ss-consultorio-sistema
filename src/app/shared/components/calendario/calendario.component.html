@@ -32,7 +32,7 @@
             <div class="atendimento"
                 [ngStyle]="{'top': obterPosicao(item)+'px', 'background-color': item.cor, 'height': obterAltura(item)+'px'}"
                 *ngFor="let item of obterAtedimento(dia.dia)">
-
+                <div class="for-drag" (drag)="onDrag($event, item)" (dragstart)="onDragStart($event)"></div>
             </div>
         </div>
     </div>

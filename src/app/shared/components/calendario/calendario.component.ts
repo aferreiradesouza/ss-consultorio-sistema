@@ -14,12 +14,15 @@ export class CalendarioComponent implements OnInit {
   public posicaoPaleta;
   public horarios;
   public dias;
+  public dragY: number;
+  public dragYstart: number;
+  public dragYend = 0;
 
   public data = [
-    {horaInicio: '01:00', horaFim: '02:00', data: '2019-08-18', cor: '#e74c3c'},
-    {horaInicio: '06:30', horaFim: '08:00', data: '2019-08-20', cor: '#3498db'},
-    {horaInicio: '00:00', horaFim: '07:00', data: '2019-08-14', cor: '#2ecc71'},
-    {horaInicio: '04:30', horaFim: '12:00', data: '2019-08-16', cor: '#f1c40f'},
+    {horaInicio: '01:00', horaFim: '02:00', data: '2019-08-18', cor: '#e74c3c', id: 1},
+    {horaInicio: '06:30', horaFim: '08:00', data: '2019-08-20', cor: '#3498db', id: 2},
+    {horaInicio: '00:00', horaFim: '07:00', data: '2019-08-14', cor: '#2ecc71', id: 3},
+    {horaInicio: '04:30', horaFim: '12:00', data: '2019-08-16', cor: '#f1c40f', id: 4},
   ];
 
   constructor(public calendarioService: CalendarioService) {
@@ -45,12 +48,6 @@ export class CalendarioComponent implements OnInit {
   }
 
   clickHora(dia, hora) {
-    // const decimal = (minuto * 24) / this.obterArray(24 * 2).length;
-    // let decimalTime = decimal * 60 * 60;
-    // const hours = Math.floor((decimalTime / (60 * 60)));
-    // decimalTime = decimalTime - (hours * 60 * 60);
-    // const minutes = Math.floor((decimalTime / 60));
-    // console.log(`${dia}, ${hours.toString().length === 1 ? `${0}${hours}` : hours}:${minutes}`);
     console.log(dia, hora);
   }
 
@@ -84,5 +81,26 @@ export class CalendarioComponent implements OnInit {
     const fim = this.calendarioService.hourToDecimal(item.horaFim);
 
     return 48 * (fim - inicio);
+  }
+
+  onDragStart(event: DragEvent) {
+    this.dragYstart = event.screenY;
+  }
+
+  onDrag(event: DragEvent, item) {
+    if (event.screenY === 0) {
+      return ;
+    }
+    if ((this.dragYstart - event.offsetY) % 24 === 0) {
+      const i = this.data.map(e => e.id).indexOf(item.id);
+      let hora = this.calendarioService.hourToDecimal(this.data[i].horaFim);
+      if (event.offsetY > this.dragYend) {
+        hora += 0.5;
+      } else {
+        hora -= 0.5;
+      }
+      this.dragYend = 0;
+      this.data[i].horaFim = this.calendarioService.decimalToHour(hora);
+    }
   }
 }

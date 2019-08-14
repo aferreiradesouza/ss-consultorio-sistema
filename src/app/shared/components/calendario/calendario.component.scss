@@ -184,7 +184,18 @@ $hour-count: 24;
         position: absolute;
         top: calc(24px * 5);
         border-radius: 6px;
-        z-index: 2;
+
+        > .for-drag {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50%;
+          height: 10px;
+          background-color: red;
+          z-index: 1000;
+          cursor: move;
+        }
       }
     }
   }

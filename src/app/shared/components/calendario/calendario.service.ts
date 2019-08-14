@@ -86,4 +86,12 @@ export class CalendarioService {
         const dec = parseInt(((arr[1] / 6) * 10).toString(), 10);
         return parseFloat(parseInt(arr[0], 10) + '.' + (dec < 10 ? '0' : '') + dec);
     }
+
+    decimalToHour(decimal) {
+    let decimalTime = decimal * 60 * 60;
+    const hours = Math.floor((decimalTime / (60 * 60)));
+    decimalTime = decimalTime - (hours * 60 * 60);
+    const minutes = Math.floor((decimalTime / 60));
+    return `${hours.toString().length === 1 ? `${0}${hours}` : hours}:${minutes.toString().length === 1 ? `0${minutes}` : `${minutes}`}`;
+    }
 }
