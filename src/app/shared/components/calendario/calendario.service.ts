@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
     providedIn: 'root'
@@ -7,8 +8,8 @@ export class CalendarioService {
 
     constructor() { }
 
-    criarArray(numero: number): string[] {
-        return ' '.repeat(numero).split('');
+    criarArray(numero: number): number[] {
+        return ' '.repeat(numero).split('').map((e, index) => index++);
     }
 
     formatarDay(day: number) {
@@ -57,5 +58,32 @@ export class CalendarioService {
             case 11:
                 return { extenso: 'Dezembro', curto: 'Dez' };
         }
+    }
+
+    montarHorarios() {
+        const horarios = this.criarArray(48);
+        let count = 1;
+        return horarios.map(h => {
+            return { hora: `${h % 2 === 0 ? `${h / 2}:00` : `${h - count++}:30`}` };
+        });
+    }
+
+    montarDias() {
+        const diasLength: any[] = this.criarArray(7);
+        const diaAtual: any = moment(new Date(), 'YYYY-MM-DD');
+        const dataAtual: any = moment();
+        return diasLength.map((d, index) => {
+            return  {
+                dia: diaAtual.add('days', index === 0 ? 0 : 1).format('DD'),
+                data: this.formatarDay(new Date(dataAtual.add('days', index === 0 ? 0 : 1)).getDay())
+            };
+        });
+    }
+
+    hourToDecimal(hora) {
+        const horaAtual = hora;
+        const arr: any[] = horaAtual.split(':');
+        const dec = parseInt(((arr[1] / 6) * 10).toString(), 10);
+        return parseFloat(parseInt(arr[0], 10) + '.' + (dec < 10 ? '0' : '') + dec);
     }
 }

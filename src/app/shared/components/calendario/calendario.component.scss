@@ -3,7 +3,7 @@
 $width-dia: calc(94% / 7);
 $width-hora: 6%;
 $height-ceil: 48px;
-$color-grid: #ccc;
+$color-grid: rgb(233, 233, 233);
 $hour-count: 24;
 
 ::-webkit-scrollbar {
@@ -12,17 +12,93 @@ $hour-count: 24;
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f8f8f8; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; 
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+.header {
+  position: sticky;
+  width: 100%;
+  height: 80px;
+  background-color: #f8f8f8;
+  top: 0;
+  z-index: 3;
+  padding-right: 10.9px;
+
+  > div {
+    height: calc(100% - 20px);
+
+    > .eixo-hora-header {
+      width: $width-hora;
+      max-width: $width-hora;
+      position: relative;
+    }
+
+    > .dataSemana {
+      width: $width-dia;
+      max-width: $width-dia;
+      position: relative;
+
+      > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        font-size: 12px;
+
+        &.active {
+          color: $primary;
+        }
+      }
+
+      > .dia {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+        padding: 5px 12.6px;
+        border-radius: 100%;
+        font-size: 20px;
+
+        &.active {
+          background-color: $primary;
+          color: $primary-contrast-dark;
+        }
+      }
+    }
+  }
+
+  > .decorator {
+    width: 100%;
+    height: 20px;
+    display: flex;
+
+    > .eixo-hora-header-decorator {
+      width: $width-hora;
+      max-width: $width-hora;
+      height: 100%;
+      border-bottom: 1px solid $color-grid;
+      box-sizing: content-box;
+    }
+
+    > .decorator-cell {
+      width: $width-dia;
+      max-width: $width-dia;
+      height: 100%;
+      border-bottom: 1px solid $color-grid;
+      border-left: 1px solid $color-grid;
+      box-sizing: content-box;
+    }
+  }
 }
 
 .wrapper {
@@ -30,85 +106,6 @@ $hour-count: 24;
   width: 100%;
   height: 700px;
   overflow-y: auto;
-
-  > .header {
-    position: sticky;
-    width: 100%;
-    height: 80px;
-    background-color: #f8f8f8;
-    top: 0;
-    z-index: 3;
-
-    > div {
-      height: calc(100% - 20px);
-
-      > .eixo-hora-header {
-        width: $width-hora;
-        max-width: $width-hora;
-        position: relative;
-      }
-
-      > .dataSemana {
-        width: $width-dia;
-        max-width: $width-dia;
-        position: relative;
-
-        > span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -100%);
-          font-size: 12px;
-
-          &.active {
-            color: $primary;
-          }
-        }
-
-        > .dia {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -5%);
-          padding: 5px 12.6px;
-          border-radius: 100%;
-          font-size: 20px;
-
-          &.active {
-            background-color: $primary;
-            color: $primary-contrast-dark;
-          }
-        }
-      }
-    }
-
-    > .decorator {
-      width: 100%;
-      height: 20px;
-      display: flex;
-
-      > .eixo-hora-header-decorator {
-        width: $width-hora;
-        max-width: $width-hora;
-        height: 100%;
-        border-bottom: 1px solid $color-grid;
-        box-sizing: content-box;
-      }
-
-      > .decorator-cell {
-        width: $width-dia;
-        max-width: $width-dia;
-        height: 100%;
-        border-bottom: 1px solid $color-grid;
-        border-left: 1px solid $color-grid;
-        box-sizing: content-box;
-
-        &:last-child {
-          border-right: 1px solid $color-grid;
-        }
-      }
-    }
-  }
 
   > .corpo {
     width: 100%;
@@ -149,6 +146,7 @@ $hour-count: 24;
       border-left: 1px solid $color-grid;
       box-sizing: content-box;
       z-index: 2;
+      position: relative;
 
       &:last-child {
         border-right: 1px solid $color-grid;
@@ -156,7 +154,37 @@ $hour-count: 24;
       
       > .grid-get-hour {
         width: 100%;
-        height: calc(#{$height-ceil} / 4);
+        height: calc(#{$height-ceil} / 2);
+        float: left;
+      }
+
+      > .paleta {
+        width: 100%;
+        height: 2px;
+        background-color: red;
+        position: absolute;
+        z-index: 3;
+
+        > .decoracao-paleta {    
+          left: 0;
+          top: 0;
+          width: 8px;
+          height: 8px;
+          background-color: red;
+          border-radius: 100%;
+          transform: translate(-50%, -40%);
+        }
+      }
+
+      > .atendimento {
+        width: calc(100% - 10px);
+        margin: 0px 5px;
+        height: calc(24px * 3);
+        background-color: #e74c3c;
+        position: absolute;
+        top: calc(24px * 5);
+        border-radius: 6px;
+        z-index: 2;
       }
     }
   }
