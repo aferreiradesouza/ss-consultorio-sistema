@@ -44,7 +44,7 @@
         <div class="sub-header border-bottom-default mb-4">
             <div class="row">
                 <div class="col-sm">
-                    <span *ngFor="let item of routes; let i = index" (click)="selectBreadcrumb(item)"> {{item}} <i
+                    <span *ngFor="let item of routes; let i = index" (click)="selectBreadcrumb(item.path)"> {{item.label}} <i
                             class="fa fa-chevron-right" *ngIf="i + 1 !== routes.length"></i></span>
                 </div>
             </div>

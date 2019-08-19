@@ -18,8 +18,8 @@
         <!-- <div class="grid" [ngStyle]="{'top': 72 * i+'px'}" *ngFor="let hora of obterHoras(); let i = index">
         </div> -->
         <div class="eixo-dia" *ngFor="let dia of dias; let i = index">
-            <div class="agendamento" *ngFor="let item of obterAgendamentos(i)" [ngClass]="shoudDisabledItem(item)">
-                <div class="card-agendamento" *ngIf="!shoudDisabledItem(item)">
+            <div class="agendamento" *ngFor="let item of obterAgendamentos(i)" [ngClass]="obterClassesAgendamento(item)">
+                <div class="card-agendamento" *ngIf="!isNumber(item)">
                     <div class="card-agendamento-header">
                         <div class="hora">{{item.hora}}</div>
                         <div class="type">{{item.type}}</div>

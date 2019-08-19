@@ -58,9 +58,12 @@ export class CalendarioComponent implements OnInit {
     this.maxAgendamentos = count;
   }
 
-  shoudDisabledItem(item) {
-    if (typeof item === 'number') {
-      return ['disabled'];
-    }
+  obterClassesAgendamento(item) {
+    if (typeof item === 'number') { return ['disabled']; }
+    const ret = [];
+    if (item.type === 'Livre') { ret.push('livre'); }
+    return ret;
   }
+
+  isNumber(val) { return typeof val === 'number'; }
 }

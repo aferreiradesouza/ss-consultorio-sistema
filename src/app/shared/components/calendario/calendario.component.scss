@@ -160,8 +160,6 @@ $hour-count: 48;
             > .type {
               padding: 0px 6px;
               font-size: 12px;
-              background-color: $primary;
-              color: $primary-contrast-dark;
               border-radius: 4px;
               display: table;
               overflow: hidden;
@@ -176,6 +174,10 @@ $hour-count: 48;
             padding-top: 6px;
           }
         }
+      }
+
+      > .livre {
+        background-color: rgba(75, 255, 0, 0.18);
       }
 
       > .disabled {

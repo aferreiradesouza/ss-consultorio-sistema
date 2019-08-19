@@ -36,7 +36,9 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.route.snapshot.root);
     this.obterBreadcrumb(this.route.snapshot.root);
+    console.log(this.breadCrumb);
   }
 
   toggle() {
@@ -46,7 +48,9 @@ export class MenuComponent implements OnInit {
   obterBreadcrumb(route) {
     if (route.data.breadcrumb) {
       if (this.breadCrumb[this.breadCrumb.length - 1] !== route.data.breadcrumb) {
-        this.breadCrumb.push(route.data.breadcrumb);
+        if (route.routeConfig.path !== '') {
+          this.breadCrumb.push({label: route.data.breadcrumb, path: route.routeConfig.path});
+        }
       }
     }
     if (route.children.length > 0) {
@@ -64,11 +68,13 @@ export class MenuComponent implements OnInit {
 
   selectBreadcrumb(url): void {
     const destino = [];
-    for (const item of this.routes) {
-      console.log(item);
-      destino.push(item.route);
+    for (const item of this.breadCrumb) {
+      destino.push(item.path);
+      if (url === item.path) {
+        break;
+      }
     }
-    // this.router.navigate(destino);
+    this.router.navigate(destino);
   }
 
   alternar() {
