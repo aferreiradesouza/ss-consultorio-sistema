@@ -60,14 +60,6 @@ export class CalendarioService {
         }
     }
 
-    montarHorarios() {
-        const horarios = this.criarArray(48);
-        let count = 1;
-        return horarios.map(h => {
-            return { hora: `${h % 2 === 0 ? `${h / 2}:00` : `${h - count++}:30`}` };
-        });
-    }
-
     montarDias() {
         const diasLength: any[] = this.criarArray(7);
         const diaAtual: any = moment(new Date(), 'YYYY-MM-DD');

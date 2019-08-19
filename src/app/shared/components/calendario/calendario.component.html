@@ -15,24 +15,20 @@
 </div>
 <div class="wrapper">
     <div class="corpo">
-        <div class="grid" [ngStyle]="{'top': 48 * i+'px'}" *ngFor="let hora of obterHoras(); let i = index">
-        </div>
-        <div class="eixo-hora">
-            <div class="horas" *ngFor="let hora of obterHoras(); let i = index">
-                {{pegarHora(i + 1)}}
-            </div>
-        </div>
+        <!-- <div class="grid" [ngStyle]="{'top': 72 * i+'px'}" *ngFor="let hora of obterHoras(); let i = index">
+        </div> -->
         <div class="eixo-dia" *ngFor="let dia of dias; let i = index">
-            <div class="grid-get-hour" (click)="clickHora(dia.dia, item.hora)"
-                *ngFor="let item of horarios; let index = index">
-            </div>
-            <div class="paleta" *ngIf="dia.dia == dataAtual" [ngStyle]="{'top' : posicaoPaleta+'%'}">
-                <div class="decoracao-paleta"></div>
-            </div>
-            <div class="atendimento"
-                [ngStyle]="{'top': obterPosicao(item)+'px', 'background-color': item.cor, 'height': obterAltura(item)+'px'}"
-                *ngFor="let item of obterAtedimento(dia.dia)">
-                <div class="for-drag" (drag)="onDrag($event, item)" (dragstart)="onDragStart($event)"></div>
+            <div class="agendamento" *ngFor="let item of obterAgendamentos(i)" [ngClass]="shoudDisabledItem(item)">
+                <div class="card-agendamento" *ngIf="!shoudDisabledItem(item)">
+                    <div class="card-agendamento-header">
+                        <div class="hora">{{item.hora}}</div>
+                        <div class="type">{{item.type}}</div>
+                    </div>
+                    <div class="card-agendamento-content">
+                        <ss-button [fill]="true" label="Marcar" [disabled]="false" color="verde" size="small">
+                        </ss-button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

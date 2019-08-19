@@ -9,39 +9,45 @@ import { Router } from '@angular/router';
 
 export class ButtonComponent implements OnInit {
   public readonly colors = ['azul', 'cinza', 'amarelo', 'verde', 'vermelho', 'cyan', 'light', 'preto'];
+  public readonly sizes = ['small', 'default', 'big'];
 
   @Input() fill?: boolean = true;
   @Input() label: string;
   @Input() color?: string = 'azul';
   @Input() disabled?: boolean = false;
+  @Input() size: string = 'default';
 
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
   ngOnInit() {
     if (this.colors.indexOf(this.color) === -1) {
       throw new Error('[ss-button] Cor invalida ' + this.color);
+    }
+
+    if (this.sizes.indexOf(this.size) === -1) {
+      throw new Error('[ss-button] Tamanho Inválido ' + this.size);
     }
   }
 
   public getColor() {
     switch (this.color) {
       case 'azul':
-          return this.fill ? 'btn-primary' : 'btn-outline-primary';
+        return this.fill ? 'btn-primary' : 'btn-outline-primary';
       case 'cinza':
-          return this.fill ? 'btn-secondary' : 'btn-outline-secondary';
+        return this.fill ? 'btn-secondary' : 'btn-outline-secondary';
       case 'amarelo':
-          return this.fill ? 'btn-warning' : 'btn-outline-warning';
+        return this.fill ? 'btn-warning' : 'btn-outline-warning';
       case 'verde':
-          return this.fill ? 'btn-success' : 'btn-outline-success';
+        return this.fill ? 'btn-success' : 'btn-outline-success';
       case 'vermelho':
-          return this.fill ? 'btn-danger' : 'btn-outline-danger';
+        return this.fill ? 'btn-danger' : 'btn-outline-danger';
       case 'cyan':
-          return this.fill ? 'btn-info' : 'btn-outline-info';
+        return this.fill ? 'btn-info' : 'btn-outline-info';
       case 'light':
-          return this.fill ? 'btn-light' : 'btn-outline-light';
+        return this.fill ? 'btn-light' : 'btn-outline-light';
       case 'preto':
-          return this.fill ? 'btn-dark' : 'btn-outline-dark';
-  }
+        return this.fill ? 'btn-dark' : 'btn-outline-dark';
+    }
   }
 }

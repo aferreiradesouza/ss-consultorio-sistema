@@ -1,10 +1,10 @@
 @import "../../variables.scss";
 
-$width-dia: calc(94% / 7);
-$width-hora: 6%;
-$height-ceil: 48px;
+$width-dia: calc(100% / 7);
+$width-hora: 0%;
+$height-ceil: 72px;
 $color-grid: rgb(233, 233, 233);
-$hour-count: 24;
+$hour-count: 48;
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -104,39 +104,21 @@ $hour-count: 24;
 .wrapper {
   position: relative;
   width: 100%;
-  height: 700px;
-  overflow-y: auto;
+  max-height: 700px;
+  overflow-y: scroll;
 
   > .corpo {
     width: 100%;
-    height: calc(#{$height-ceil} * #{$hour-count});
+    // height: calc(#{$height-ceil} * #{$hour-count});
     display: flex;
     position: relative;
 
     > .grid {
-      width: calc(100% - (#{$width-hora} - 2%));
+      width: calc(100% - (#{$width-hora} - 10px));
       height: $height-ceil;
       position: absolute;
       border-bottom: 1px solid $color-grid;
-      left: calc(#{$width-hora} - 2%);
-    }
-
-    > .eixo-hora {
-      width: $width-hora;
-      max-width: $width-hora;
-      height: 100%;
-      box-sizing: content-box;
-      z-index: 2;
-
-      > .horas {
-        height: $height-ceil;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        padding-right: 15px;
-        font-size: 10px;
-      }
+      left: calc(#{$width-hora} - 10px);
     }
 
     > .eixo-dia {
@@ -151,51 +133,53 @@ $hour-count: 24;
       &:last-child {
         border-right: 1px solid $color-grid;
       }
-      
-      > .grid-get-hour {
-        width: 100%;
-        height: calc(#{$height-ceil} / 2);
-        float: left;
-      }
 
-      > .paleta {
-        width: 100%;
-        height: 2px;
-        background-color: red;
-        position: absolute;
-        z-index: 3;
+      > .agendamento {
+        height: 72px;
+        box-sizing: content-box;
+        border-bottom: 1px solid $color-grid;
 
-        > .decoracao-paleta {    
-          left: 0;
-          top: 0;
-          width: 8px;
-          height: 8px;
-          background-color: red;
-          border-radius: 100%;
-          transform: translate(-50%, -40%);
+        > .card-agendamento {
+          height: 100%;
+          width: 100%;
+          
+          > .card-agendamento-header {
+            display: flex;
+            padding: 10px 10px 0px 10px;
+
+            > .hora {
+              padding: 0px 6px;
+              font-size: 10px;
+              background-color: $very-light-primary;
+              color: $primary-contrast-dark;
+              border-radius: 4px;
+              display: table;
+              margin-right: 3px;
+            }
+  
+            > .type {
+              padding: 0px 6px;
+              font-size: 12px;
+              background-color: $primary;
+              color: $primary-contrast-dark;
+              border-radius: 4px;
+              display: table;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis
+            }
+          }
+
+          > .card-agendamento-content {
+            width: 100%;
+            text-align: center;
+            padding-top: 6px;
+          }
         }
       }
 
-      > .atendimento {
-        width: calc(100% - 10px);
-        margin: 0px 5px;
-        height: calc(24px * 3);
-        background-color: #e74c3c;
-        position: absolute;
-        top: calc(24px * 5);
-        border-radius: 6px;
-
-        > .for-drag {
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 50%;
-          height: 10px;
-          background-color: red;
-          z-index: 1000;
-          cursor: move;
-        }
+      > .disabled {
+        background-color: #ccc;
       }
     }
   }
