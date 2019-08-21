@@ -60,14 +60,13 @@ export class CalendarioService {
         }
     }
 
-    montarDias() {
-        const diasLength: any[] = this.criarArray(7);
-        const diaAtual: any = moment(new Date(), 'YYYY-MM-DD');
-        const dataAtual: any = moment();
-        return diasLength.map((d, index) => {
+    montarDias(data) {
+        return data.map((date, index) => {
             return  {
-                dia: diaAtual.add('days', index === 0 ? 0 : 1).format('DD'),
-                data: this.formatarDay(new Date(dataAtual.add('days', index === 0 ? 0 : 1)).getDay())
+                dia: moment(date.data, 'YYYY-MM-DD').format('DD'),
+                data: this.formatarDay(moment(date.data, 'YYYY-MM-DD').day()),
+                diaCompleta: date.data,
+                maximoEncaixes: date.maximoEncaixes
             };
         });
     }

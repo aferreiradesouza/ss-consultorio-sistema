@@ -10,7 +10,7 @@ import { CalendarioService } from './calendario.service';
 })
 
 export class CalendarioComponent implements OnInit {
-  public dataAtual = new Date();
+  public dataAtual = moment().format('YYYY-MM-DD');
   public posicaoPaleta;
   public dias;
   public maxAgendamentos: number;
@@ -20,9 +20,8 @@ export class CalendarioComponent implements OnInit {
   constructor(public calendarioService: CalendarioService) { }
 
   ngOnInit() {
-    this.dias = this.calendarioService.montarDias();
-    this.verificarTotalDeAgendamentos();
-    console.log(this.maxAgendamentos);
+    this.dias = this.calendarioService.montarDias(this.data);
+    console.log(this.dias);
   }
 
   obterArray(num) {
@@ -42,26 +41,13 @@ export class CalendarioComponent implements OnInit {
         ret.push(...dias.agendamentos);
       }
     });
-    if (ret.length < this.maxAgendamentos) {
-      ret.push(...this.calendarioService.criarArray(this.maxAgendamentos - ret.length));
-    }
     return ret;
-  }
-
-  verificarTotalDeAgendamentos(): void {
-    let count = 0;
-    this.data.forEach(data => {
-      if (data.agendamentos.length > count) {
-        count = data.agendamentos.length;
-      }
-    });
-    this.maxAgendamentos = count;
   }
 
   obterClassesAgendamento(item) {
     if (typeof item === 'number') { return ['disabled']; }
     const ret = [];
-    if (item.type === 'Livre') { ret.push('livre'); }
+    if (item.status === 'Livre') { ret.push('livre'); }
     return ret;
   }
 
