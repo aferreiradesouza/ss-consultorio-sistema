@@ -1,3 +1,14 @@
+<div class="painel row">
+    <div class="col-sm-3 mini-calendario">
+        <ss-button-icon [fill]="true" icon="chevron-up" color="cinza" size="small">
+        </ss-button-icon>
+        Calendário
+    </div>
+    <div class="col-sm-4 mudanca-semana"></div>
+    <div class="col-sm-3 legenda"></div>
+    <div class="col-sm-2 filtro"></div>
+</div>
+
 <div class="header">
     <div class="d-flex">
         <div class="eixo-hora-header"></div>
@@ -26,12 +37,18 @@
                         <ss-button [fill]="true" label="Marcar" [disabled]="false" color="verde" size="small">
                         </ss-button>
                     </div>
-                    <div class="card-agendamento-content" *ngIf="item.status !== 'Livre'">
+                </ng-container>
+                <ng-container *ngIf="item.status !== 'Livre'">
+                    <div class="card-agendamento-header no-padding-bottom">
+                        <div class="hora">{{item.hora}}</div>
                     </div>
-                    <div class="encaixe" *ngIf="dia.maximoEncaixes > 0">
-                        Encaixe
+                    <div class="card-agendamento-content">
+                        <div class="detalhe">{{item.marcacao.nome}}</div>
                     </div>
                 </ng-container>
+                <div class="encaixe" *ngIf="dia.maximoEncaixes > 0 && item.status !== 'Livre'">
+                    Encaixe
+                </div>
             </div>
         </div>
     </div>

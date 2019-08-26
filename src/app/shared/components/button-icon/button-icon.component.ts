@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 
 export class ButtonIconComponent implements OnInit {
   public readonly colors = ['azul', 'cinza', 'amarelo', 'verde', 'vermelho', 'cyan', 'light', 'preto'];
+  public readonly sizes = ['small', 'default', 'big'];
 
   @Input() fill?: boolean = true;
   @Input() icon: string;
   @Input() color?: string = 'azul';
   @Input() disabled?: boolean = false;
+  @Input() size: string = 'default';
 
 
   constructor(public router: Router) { }
@@ -25,6 +27,10 @@ export class ButtonIconComponent implements OnInit {
 
     if (!this.icon) {
       throw new Error('[ss-button] Icon is mandatory');
+    }
+
+    if (this.sizes.indexOf(this.size) === -1) {
+      throw new Error('[ss-button] Tamanho Inválido ' + this.size);
     }
   }
 

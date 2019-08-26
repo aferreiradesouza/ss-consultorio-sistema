@@ -39,8 +39,8 @@ $primary: #34495e;
 $dark-primary: darken($primary, 5%);
 $very-dark-primary: darken($primary, 10%);
 $hover-primary: darken($primary, 15%);
-$light-primary: lighten($primary, 5%);
-$very-light-primary: lighten($primary, 10%);
+$light-primary: lighten($primary, 10%);
+$very-light-primary: lighten($primary, 20%);
 
 $primary-contrast-dark: #fff;
 $primary-contrast-light: #000;

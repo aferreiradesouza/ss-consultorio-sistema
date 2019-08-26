@@ -5,3 +5,17 @@
     background-color: $danger !important;
     border-color: $danger-dark-5 !important;
 }
+
+.default {
+    font-size: 14px;
+}
+
+.small {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-bottom: 1px;
+}
+
+.big {
+    font-size: 17px;
+}

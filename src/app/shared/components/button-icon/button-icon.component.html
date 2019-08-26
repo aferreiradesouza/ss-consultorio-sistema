@@ -1,5 +1,5 @@
 <div>
-    <button type="button" [class]="'btn ' + getColor()"
+    <button type="button" [class]="'btn ' + getColor() + ' ' + size"
     [ngClass]="{'btn-outline-primary' : !fill, 'btn-primary' : fill}" [disabled]="disabled">
         <i [class]="'fa fa-' + icon"></i>
     </button>
